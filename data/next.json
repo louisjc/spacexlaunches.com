@@ -1,0 +1,10 @@
+{
+  "date": "2016-05-27",
+  "rocket": "falcon9_1.2",
+  "payloads": [
+    {
+      "name": "Thaicom 8",
+      "destination": "GTO"
+    }
+  ]
+}

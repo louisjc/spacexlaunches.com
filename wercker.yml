@@ -1,0 +1,29 @@
+box: louisjc/jekyll-s3-uglifyjs
+build:
+    steps:
+        - script:
+            name: SASS
+            code: |
+              gem install sass
+              sass --sourcemap=none style.scss _site/style.css
+        - script:
+            name: Generate site
+            code: |
+              node -v
+              npm install jsdom jquery
+              node generate.js
+              cp -r _site "$WERCKER_OUTPUT_DIR"
+        - script:
+            name: Copy s3_website.yml
+            code: cp s3_website.yml "$WERCKER_OUTPUT_DIR"
+
+deploy:
+    steps:
+        - script:
+            name: s3website
+            code: |
+              echo "s3_id: $AWS_ACCESS_KEY_ID" >> s3_website.yml
+              echo "s3_secret: $AWS_SECRET_ACCESS_KEY" >> s3_website.yml
+              echo "s3_bucket: $AWS_BUCKET_URL" >> s3_website.yml
+              echo N | s3_website cfg apply
+              s3_website push

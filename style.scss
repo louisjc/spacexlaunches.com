@@ -1,0 +1,203 @@
+* {box-sizing: border-box;}
+
+h2 {
+  font-weight: 600;
+  color: rgb(51, 51, 51);
+  margin-left: 7px;
+  font-size: 18px;
+  margin-bottom: 3px;
+  font-variant: small-caps;
+}
+
+body, h1, h2, h3, h4, h5 {font-family: "Open sans",sans-serif;}
+
+html {height: 100%;}
+body {
+  background-color: #fcfcfc;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+header {
+  height: 90px;
+  width: 100%;
+  padding: 10px;
+  background-color: #333;
+  box-shadow: 0 -8px 5px -6px #656565 inset;
+  color: #fff;
+  background-image: url(bg.jpg);
+  background-size: 100%;
+  >img {
+    display: inline;
+    height: 50px;
+    position: absolute;
+    right: 16px;
+    top: 24px;
+  }
+  >h1 {
+    color: #fff;
+    font-size: 45px;
+    font-variant: small-caps;
+    font-weight: 100;
+    margin: 17px 12px 0 0;
+    display: inline-block;
+  }
+  style {color: #ccc}
+}
+.github{
+  position: absolute; top: 0; right: 0; border: 0;
+}
+main {}
+#infos {
+  padding: 0px 7px;
+  #countdown{
+    padding-right: 15px;
+    >div {
+      width: 75px;
+    }
+  }
+  >div {
+    display: inline-block;
+    float: left;
+    >div {
+      display: inline-block;
+      text-align: center;
+      span{
+        display: block;
+        font-variant: small-caps;
+      }
+      div:last-of-type{
+        height: 50px;
+        font-size: 50px;
+        line-height: 1;
+      }
+    }
+  }
+  .next>div{
+    border-left: 1px solid #ccc;
+    padding-left: 15px;
+    padding-right: 12px;
+    >div{
+      line-height:50px !important;
+      font-size:38px!important;
+    }
+  }
+}
+p {
+  margin: 0;
+  padding: 5px 7px;
+}
+#previous{
+  clear: both;
+  padding-top: 14px;
+  h2 {display: inline}
+  b {
+    color: rgb(160, 160, 160);
+    font-style: oblique;
+    font-size: 15px;
+    margin-left: 8px;
+  }
+  #reverse{
+    cursor: pointer;
+    font-variant: small-caps;
+    position: absolute;
+    right: 20px;
+    text-decoration: underline;
+  }
+  a {color: #a0a0a0}
+
+}
+
+#flights {
+  align-content: stretch;
+  display: flex;
+  flex-direction: row;
+  min-height: 400px;
+  overflow-x: scroll;
+  border-top: 2px solid #a7a9ac;
+  padding-top: 5px;
+  background-color: #fff;
+}
+
+.flight {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  min-width: 86px;
+  .destination {
+    align-items: flex-end;
+    align-content: stretch;
+    justify-content: center;
+    display: flex;
+    flex: 1 0 0;
+    min-height: 120px;
+    margin-bottom: 5px;
+  }
+}
+
+
+
+.failure, .LEO, .Polar {align-items: flex-end;}
+.GTO, .GEO {align-items: center;}
+.SUN-EARTH-L1 {align-items: flex-start;}
+
+.rocket {
+  padding-top: 5px;
+  border-top: 1px solid #ccc;
+  align-items: flex-end;
+  align-content: stretch;
+  justify-content: center;
+  display: flex;
+  flex: 1 0 0;
+}
+.name {
+  text-align: center;
+  height: 40px;
+  overflow: hidden;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.falcon1 {border-bottom: 5px solid #b4b4b4;}
+.falcon910 {border-bottom: 5px solid #90cc43;}
+.falcon911 {border-bottom: 5px solid #ccaa55;}
+.falcon912 {border-bottom: 5px solid #5571cc;}
+
+#labels > span {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 23px;
+  text-transform: uppercase;
+  transform: rotate(90deg);
+  transform-origin: left top 0;
+  width: 10px;
+  margin-top: 18px;
+}
+
+footer {
+  font-size: 13px;
+  font-weight: 100;
+  padding: 6px;
+  a {color: #333;}
+}
+
+@media (max-height: 770px) {
+  #labels {display: none;}
+  .flight .destination {
+    align-items: flex-end;
+    align-content: stretch;
+    justify-content: center;
+    min-height: 47px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 850px) {
+  header > img, .github {display: none;}
+}
+@media (max-width: 1100px) {
+  header > span {display: none;}
+}
