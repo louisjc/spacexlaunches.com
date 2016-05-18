@@ -1,4 +1,4 @@
-# [spacexlaunches.space](spacexlaunches.space)
+# [spacexlaunches.space](https://spacexlaunches.space) ![Build Status](https://app.wercker.com/status/e366cbd8bb135fc76e3be74ddc7fd974/s/master)
 *Previous SpaceX launches and  next mission.*
 
 ## About
