@@ -125,7 +125,6 @@ p {
   flex-direction: column;
   min-width: 86px;
   .destination {
-    align-items: flex-end;
     align-content: stretch;
     justify-content: center;
     display: flex;
@@ -137,7 +136,7 @@ p {
 
 
 
-.failure, .LEO, .Polar {align-items: flex-end;}
+.failure, .LEO, .Polar, .ISS, .MEO {align-items: flex-end;}
 .GTO, .GEO {align-items: center;}
 .SUN-EARTH-L1 {align-items: flex-start;}
 
