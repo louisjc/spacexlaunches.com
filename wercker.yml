@@ -2,6 +2,10 @@ box: louisjc/jekyll-s3-uglifyjs
 build:
     steps:
         - script:
+            name: Get data
+            code: |
+              git clone https://github.com/spacexlaunches/data.git data
+        - script:
             name: SASS
             code: |
               gem install sass
