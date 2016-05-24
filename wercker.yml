@@ -5,7 +5,7 @@ build:
             name: SASS
             code: |
               gem install sass
-              sass --sourcemap=none style.scss _site/style.css
+              sass --style compressed --sourcemap=none style.scss _site/style.css
         - script:
             name: Generate site
             code: |
