@@ -7,7 +7,7 @@ var htmlSource = fs.readFileSync('layout.html', 'utf8');
 function getRocket(rocket) {
   var options = rocket.split('-');
   var res = '<svg xmlns="http://www.w3.org/2000/svg" width="50" height="538" ' +
-  'xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="3 369 48 500">';
+  'xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 535">';
   res += '<use xlink:href="rockets.svg#' + options[0] + '"></use>';
 
   if (options.length > 1) {
