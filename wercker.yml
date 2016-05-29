@@ -4,7 +4,7 @@ build:
         - script:
             name: Get data
             code: |
-              git clone https://github.com/spacexlaunches/data.git data
+              git clone https://github.com/spacexlaunches/launches-data.git data
         - script:
             name: SASS
             code: |
@@ -13,7 +13,6 @@ build:
         - script:
             name: Generate site
             code: |
-              node -v
               npm install jsdom jquery
               node generate.js
               cp -r _site "$WERCKER_OUTPUT_DIR"
