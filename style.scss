@@ -2,6 +2,7 @@
 
 .fail{color: #d9534f}
 .success{color: #5cb85c}
+.neutral{color: #f0ad4e}
 * {box-sizing: border-box;}
 
 h2 {
@@ -140,15 +141,28 @@ p {
   }
   .name, .outcome {
     text-align: center;
-    height: 25px;
     overflow: hidden;
     font-size: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .name{padding-top: 10px}
-  .outcome{padding-bottom: 10px}
+  .name{
+    padding-top: 10px;
+    height: 25px;
+    margin-bottom: 5px;
+  }
+  .outcome{
+    padding-bottom: 10px;
+    height: 30px;
+    >span{padding: 2px 4px;}
+  }
+  .landing>span{
+    background-color: #efefef;
+    border: 1px solid;
+    border-radius: 10px;
+    min-width: 70px;
+  }
 }
 
 
