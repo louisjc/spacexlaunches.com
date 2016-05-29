@@ -1,5 +1,7 @@
 @import "normalize.scss";
 
+.fail{color: #d9534f}
+.success{color: #5cb85c}
 * {box-sizing: border-box;}
 
 h2 {
@@ -51,7 +53,6 @@ header {
 }
 main {}
 #infos {
-  padding: 0px 7px;
   #countdown{
     padding-right: 15px;
     >div {
@@ -137,6 +138,17 @@ p {
     min-height: 120px;
     margin-bottom: 5px;
   }
+  .name, .outcome {
+    text-align: center;
+    height: 25px;
+    overflow: hidden;
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .name{padding-top: 10px}
+  .outcome{padding-bottom: 10px}
 }
 
 
@@ -153,15 +165,6 @@ p {
   justify-content: center;
   display: flex;
   flex: 1 0 0;
-}
-.name {
-  text-align: center;
-  height: 40px;
-  overflow: hidden;
-  font-size: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .falcon1 {border-bottom: 5px solid #b4b4b4;}

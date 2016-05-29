@@ -45,6 +45,27 @@ function getRocketName(rocket) {
   return 'Falcon 9 v' + version;
 }
 
+function getOutcome(launch) {
+  var res = {};
+  res.class = 'outcome';
+  if (!launch.payloads[0].success) {
+    res.text = '// Failure \\\\';
+    res.class += ' fail';
+    res.style = 'font-weight: 800;';
+  } else if (launch.hasOwnProperty('landing')) {
+    if (launch.landing.success) {
+      res.text = 'Landed';
+      res.class += ' success';
+    } else {
+      res.text = 'Landing fail';
+      res.class += ' fail';
+    }
+  } else {
+    res.text = '';
+  }
+  return res;
+}
+
 // ====== Main ======
 
 jsdom.env(
@@ -61,13 +82,15 @@ jsdom.env(
 
     // Previous launches
     var data = JSON.parse(fs.readFileSync('data/launches.json', 'utf8'));
+    data.reverse();
     data.forEach(function(ele) {
       $('#flights').append(
-          $('<div/>', {class: 'flight'})
+          $('<div/>', {class: 'flight ' + getRocketClass(ele.rocket, false)})
             .append($('<span/>', {class: 'destination ' + ele.payloads[0].destination})
-              .html(getDestination(ele.payloads[0].destination)))
+              .html(getDestination(ele.payloads[0].success ? ele.payloads[0].destination : 'failure', false)))
             .append($('<div/>', {class: 'rocket'}).html(getRocket(ele.rocket)))
-            .append($('<span/>', {class: 'name ' + getRocketClass(ele.rocket, false), text: ele.payloads[0].name}))
+            .append($('<span/>', {class: 'name', text: ele.payloads[0].name}))
+            .append($('<span/>', getOutcome(ele)))
       );
     });
     $('#launches').html('(' + data.length + ')');
