@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="description" content="Every previous SpaceX launches and countdown for the next mission."/>
-  <link rel="shortcut icon" href="favicon.ico"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <link rel="shortcut icon" href="favicon.ico">
   <link rel="canonical" href="https://spacexlaunches.space/"/>
   <link rel="stylesheet" href="style.css">
   <title>SpaceX Launches</title>
@@ -20,14 +21,14 @@
 </head>
 <body>
   <header>
-    <img src="/spacex.png" alt="SpaceX logo">
+    <img src="spacex.png" alt="SpaceX logo">
     <h1>SpaceX Flights List</h1>
     <span>Fan content - Not an official site</span>
   </header>
   <a href="https://github.com/spacexlaunches/spacexlaunches.space"><img class="github" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
   <main>
     <div id="infos">
-      <h2>// Next mission</h2>
+      <h2>Next mission</h2>
       <div id="countdown" data-date="">
         <div>
           <div id="days">00</div>
@@ -46,24 +47,22 @@
           <span>seconds</span>
         </div>
       </div>
-      <div class="next">
-        <div>
-          <div id="next-destination"></div>
-          <span>Destination</span>
-        </div>
-        <div>
-          <div id="next-rocket"></div>
-          <span>Rocket</span>
-        </div>
-        <div>
-          <div id="next-mission">CRS-9</div>
-          <span>Mission</span>
-        </div>
+      <div>
+        <div id="next-destination"></div>
+        <span>Destination</span>
+      </div>
+      <div>
+        <div id="next-rocket"></div>
+        <span>Rocket</span>
+      </div>
+      <div>
+        <div id="next-mission">CRS-9</div>
+        <span>Mission</span>
       </div>
     </div>
     <div id="previous">
-      <h2>// Previous missions <span id="launches"></span></h2>
-      <b>illustrated by <a href="https://zlsa.github.io/">ZLSA Design</a></b><span id="reverse" onclick="reverse()">reverse</span>
+      <h2>Previous missions <span id="launches"></span></h2><span id="reverse" onclick="reverse()">reverse</span>
+      <b>illustrated by <a href="https://zlsa.github.io/">ZLSA Design</a></b>
     </div>
     <div id="flights"><div id="labels"><span style="height:141px">Destination</span><span style="height:520px">Rocket</span></div></div>
   </main>

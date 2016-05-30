@@ -21,7 +21,7 @@ function calcTimer(date) {
   var difference = nextLaunch.getTime() - now.getTime();
   if (difference <= 0) {
     document.getElementById('infos').innerHTML =
-     '<h2>// Next mission</h2><p>No information for the next mission. ' +
+     '<h2>Next mission</h2><p>No information for the next mission. ' +
      'You can <a href="https://github.com/spacexlaunches/spacexlaunches.space">contribute on GitHub</a>.</p>';
   } else {
     var seconds = Math.floor(difference / 1000);

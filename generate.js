@@ -6,7 +6,7 @@ var htmlSource = fs.readFileSync('layout.html', 'utf8');
 
 function getRocket(rocket) {
   var options = rocket.split('-');
-  var res = '<svg xmlns="http://www.w3.org/2000/svg" width="50" height="538" ' +
+  var res = '<svg xmlns="http://www.w3.org/2000/svg" ' +
   'xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 535">';
   res += '<use xlink:href="rockets.svg#' + options[0] + '"></use>';
 
@@ -19,9 +19,9 @@ function getRocket(rocket) {
 }
 
 function getDestination(destination, next) {
-  var res = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="45"';
-  if (!next) {res += ' width="95" viewBox="30 300 139 67">';}
-  else {res += 'width="90" viewBox="70 310 59 40">';}
+  var res = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"';
+  if (!next) {res += '  viewBox="30 300 139 67">';}
+  else {res += 'width="2.6em" height="1.2em" viewBox="70 310 59 40">';}
 
   res += '<use xlink:href="destinations.svg#' + destination + '"></use>';
 
