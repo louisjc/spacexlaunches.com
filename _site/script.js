@@ -22,7 +22,7 @@ function calcTimer(date) {
   if (difference <= 0) {
     document.getElementById('infos').innerHTML =
      '<h2>Next mission</h2><p>No information for the next mission. ' +
-     'You can <a href="https://github.com/spacexlaunches/spacexlaunches.space">contribute on GitHub</a>.</p>';
+     'You can <a href="https://github.com/spacexlaunches/spacexlaunches.com">contribute on GitHub</a>.</p>';
   } else {
     var seconds = Math.floor(difference / 1000);
     var minutes = Math.floor(seconds / 60);
