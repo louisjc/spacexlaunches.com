@@ -5,3 +5,5 @@ gzip:
   - .css
   - .js
   - .svg
+
+ignore_on_server: next.json

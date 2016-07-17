@@ -39,12 +39,6 @@ function getRocketClass(rocket) {
   return r.replace(/_|\./g, '');
 }
 
-function getRocketName(rocket) {
-  // TODO future proofing
-  var version = rocket.split('-')[0].split('_')[1];
-  return 'Falcon 9 v' + version;
-}
-
 function getOutcome(launch) {
   var res = {class: 'outcome'};
 
@@ -79,12 +73,6 @@ jsdom.env(
   ['https://code.jquery.com/jquery.js'],
   function(err, window) {
     var $ = require('jquery')(window);
-    // Next launch
-    var next = JSON.parse(fs.readFileSync('data/next.json', 'utf8'));
-    $('#next-destination').html(getDestination(next.payloads[0].destination, true));
-    $('#next-rocket').html(getRocketName(next.rocket));
-    $('#next-mission').html(next.payloads[0].name);
-    $('#countdown').attr('data-date', next.date);
 
     // Previous launches
     var data = JSON.parse(fs.readFileSync('data/launches.json', 'utf8'));

@@ -1,4 +1,5 @@
-var nextLaunch = new Date(document.getElementById('countdown').dataset.date);
+var timer;
+init();
 
 function reverse() {
   var con = document.getElementById('flights');
@@ -9,20 +10,70 @@ function reverse() {
   }
 }
 
-// TIMER
+function init() {
+  var request = new XMLHttpRequest();
+  request.open('GET', 'next.json', true);
+  request.onload = function() {
+    if (request.status >= 200 && request.status < 400) {
+      var data = JSON.parse(request.responseText);
+      var now = new Date();
+      var success = data.some(function(ele) {
+        var t = new Date(ele.date);
+        var time = t.getTime();
+        if (time - now.getTime() > 0) {
+          printNext(ele);
+          return true;
+        }
+      });
+      if (!success) {noInfoNext();}
+    } else {
+      noInfoNext();
+    }
+  };
+  request.onerror = function() {noInfoNext();};
+  request.send();
+}
 
-calcTimer(nextLaunch);
-var timer = setInterval(function() {
-  calcTimer(nextLaunch);
-}, 1000);
+function getRocketName(rocket) {
+  // TODO future proofing
+  var version = rocket.split('-')[0].split('_')[1];
+  return 'Falcon 9 v' + version;
+}
+
+function getDestination(destination, next) {
+  var res = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"';
+  if (!next) {res += '  viewBox="30 300 139 67">';}
+  else {res += 'width="2.6em" height="1.2em" viewBox="70 310 59 40">';}
+
+  res += '<use xlink:href="destinations.svg#' + destination + '"></use>';
+
+  return res + '</svg>';
+}
+
+function printNext(next) {
+  document.getElementById('infos').innerHTML =
+    '<h2>Next mission</h2>' +
+    '<div id="countdown"><div><div id="days">00</div><span>days</span></div><div><div id="hours">00</div><span>hours</span></div><div><div id="minutes">00</div><span>minutes</span></div><div><div id="seconds">00</div><span>seconds</span></div></div>' +
+    '<div><div id="next-destination"></div><span>Destination</span></div>' +
+    '<div><div id="next-rocket"></div><span>Rocket</span></div>' +
+    '<div><div id="next-mission"></div><span>Mission</span></div>';
+  document.getElementById('next-destination').innerHTML = getDestination(next.payloads[0].destination, true);
+  document.getElementById('next-rocket').innerHTML = getRocketName(next.rocket);
+  document.getElementById('next-mission').innerHTML = next.payloads[0].name;
+  var t = new Date(next.date);
+  var time = t.getTime();
+  calcTimer(time);
+  timer = setInterval(function() {
+    calcTimer(time);
+  }, 1000);
+}
 
 function calcTimer(date) {
   var now = new Date();
-  var difference = nextLaunch.getTime() - now.getTime();
+  var difference = date - now.getTime();
   if (difference <= 0) {
-    document.getElementById('infos').innerHTML =
-     '<h2>Next mission</h2><p>No information for the next mission. ' +
-     'You can <a href="https://github.com/spacexlaunches/spacexlaunches.com">contribute on GitHub</a>.</p>';
+    clearInterval(timer);
+    noInfoNext();
   } else {
     var seconds = Math.floor(difference / 1000);
     var minutes = Math.floor(seconds / 60);
@@ -38,4 +89,10 @@ function calcTimer(date) {
     document.getElementById('minutes').innerHTML = minutes;
     document.getElementById('seconds').innerHTML = seconds;
   }
+}
+
+function noInfoNext() {
+  document.getElementById('infos').innerHTML =
+   '<h2>Next mission</h2><p>No information for the next mission. ' +
+   'You can <a href="https://github.com/spacexlaunches/spacexlaunches.com">contribute on GitHub</a>.</p>';
 }
