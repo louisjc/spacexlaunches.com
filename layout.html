@@ -29,10 +29,15 @@
   <main>
     <div id="infos"><h2>Next mission</h2><p>No information for the next mission. You can <a href="https://github.com/spacexlaunches/spacexlaunches.com">contribute on GitHub</a>.</p></div>
     <div id="previous">
-      <h2>Previous missions <span id="launches"></span></h2><span id="reverse" onclick="reverse()">reverse</span>
+      <h2>Previous missions <span id="launches"></span></h2>
+      <div id="buttons">
+        <button onclick="zoom(1)">+</button>
+        <button onclick="zoom(-1)">-</button>
+        <button onclick="reverse()">Reverse</button>
+      </div>
       <b>illustrated by <a href="https://zlsa.github.io/">ZLSA Design</a></b>
     </div>
-    <div id="flights"><div id="labels"><span style="height:141px">Destination</span><span style="height:520px">Rocket</span></div></div>
+    <div id="flights"><div id="labels"><span>Destination | Rocket</span></div></div>
   </main>
   <footer>Copyright 2016 © - <a href="/">spacexlaunches.com</a> - <a href="https://github.com/spacexlaunches/spacexlaunches.com/issues/new">Report Issue</a> - <a href="https://github.com/spacexlaunches/spacexlaunches.com">GitHub</a></footer>
 </body>

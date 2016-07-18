@@ -52,11 +52,11 @@ function getDestination(destination, next) {
 
 function printNext(next) {
   document.getElementById('infos').innerHTML =
-    '<h2>Next mission</h2>' +
+    '<h2>Next mission</h2><div>' +
+    '<div><div id="next-mission"></div><span>Mission</span></div>' +
     '<div id="countdown"><div><div id="days">00</div><span>days</span></div><div><div id="hours">00</div><span>hours</span></div><div><div id="minutes">00</div><span>minutes</span></div><div><div id="seconds">00</div><span>seconds</span></div></div>' +
     '<div><div id="next-destination"></div><span>Destination</span></div>' +
-    '<div><div id="next-rocket"></div><span>Rocket</span></div>' +
-    '<div><div id="next-mission"></div><span>Mission</span></div>';
+    '<div><div id="next-rocket"></div><span>Rocket</span></div></div>';
   document.getElementById('next-destination').innerHTML = getDestination(next.payloads[0].destination, true);
   document.getElementById('next-rocket').innerHTML = getRocketName(next.rocket);
   document.getElementById('next-mission').innerHTML = next.payloads[0].name;
@@ -95,4 +95,9 @@ function noInfoNext() {
   document.getElementById('infos').innerHTML =
    '<h2>Next mission</h2><p>No information for the next mission. ' +
    'You can <a href="https://github.com/spacexlaunches/spacexlaunches.com">contribute on GitHub</a>.</p>';
+}
+
+function zoom(sign) {
+  var actual = parseFloat(document.getElementById('flights').style['font-size']) || 1;
+  document.getElementById('flights').style['font-size'] = (actual + sign * 0.1).toFixed(1) + 'em';
 }

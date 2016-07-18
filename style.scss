@@ -1,4 +1,11 @@
+// scss-lint:disable PropertySortOrder, EmptyLineBetweenBlocks
 @import "normalize.scss";
+
+$light: #fafafa;
+$dark: rgba(48, 62, 73, .6);
+$border: #a8a8aa;
+$bg: #011b2d;
+$dark-text: #414141;
 
 .fail{color: #d9534f}
 .success{color: #5cb85c}
@@ -7,10 +14,9 @@
 
 h2 {
   font-weight: 600;
-  color: rgb(51, 51, 51);
-  margin-left: 7px;
+  color: #fff;
   font-size: 1.2em;
-  margin-bottom: 3px;
+  margin: 2px 7px 0;
   font-variant: small-caps;
   &::before{
     content: "// "
@@ -21,27 +27,21 @@ body, h1, h2, h3, h4, h5 {font-family: "Open sans",sans-serif;}
 
 html {height: 100%;}
 body {
-  background-color: #fcfcfc;
+  background: $bg url('bg.jpg') repeat fixed 0 0 / 2560px 200px;
   padding: 0;
   margin: 0;
   height: 100%;
   font-size: 16px;
 }
 header {
-  height: 5.6em;
-  width: 100%;
-  padding: 10px;
-  background-color: #333;
-  box-shadow: 0 -8px 5px -6px #656565 inset;
   color: #fff;
-  background-image: url(bg.jpg);
-  background-size: 100%;
+  height: 5.6em;
+  padding: 10px 33px;
   >img {
+    margin-top: 21px;
     display: inline;
+    float: right;
     height: 3.1em;
-    position: absolute;
-    right: 16px;
-    top: 1.5em;
   }
   >h1 {
     color: #fff;
@@ -51,13 +51,23 @@ header {
     margin: 0.4em 12px 0 0;
     display: inline-block;
   }
-  style {color: #ccc}
 }
 .github{
   position: absolute; top: 0; right: 0; border: 0;
 }
-main {}
+
+main {
+  background-color: $dark;
+  border-top: 2px solid $border;
+  margin: 0 25px;
+}
+
 #infos {
+  text-align: center;
+  p {
+    color: #fff;
+    a {color: $border;}
+  }
   svg {
     width: 2.6em;
     height: 1.2em;
@@ -74,10 +84,20 @@ main {}
     >div>div{font-size: 3em !important;}
   }
   >div {
-    border-left: 1px solid #ccc;
+    background-color: $light;
+    border-color: $border;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 2px 1px 1px;
+    display: inline-block;
+    margin: 5px 10px 0;
+  }
+  >div>div {
+    border-left: 1px dashed $border;
     padding:7px 12px 0 10px;
     display: inline-block;
     float: left;
+    &:first-of-type {border-left: 0;}
     >div {
       display: inline-block;
       text-align: center;
@@ -102,33 +122,47 @@ p {
 #previous{
   clear: both;
   padding-top: 14px;
+  position: relative;
   h2 {display: inline}
   b {
-    color: rgb(160, 160, 160);
+    color: $border;
     font-style: oblique;
     font-size: 1em;
     margin-left: 8px;
   }
-  #reverse{
-    cursor: pointer;
-    font-variant: small-caps;
-    position: absolute;
-    right: 20px;
-    text-decoration: underline;
-  }
-  a {color: #a0a0a0}
+  a {color: $border;}
+}
 
+#buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 7px;
+  >button {
+    font-variant: small-caps;
+    color: $dark-text;
+    background-color: #fff;
+    border-color: $border;
+    border-style: solid solid none;
+    border-width: 2px 1px 0;
+    cursor: pointer;
+    padding: 1px 8px;
+    &:hover {
+      background-color: $border;
+    }
+  }
 }
 
 #flights {
+  font-size: 1em;
   align-content: stretch;
   display: flex;
   flex-direction: row;
   min-height: 25em;
   overflow-x: scroll;
-  border-top: 2px solid #a7a9ac;
+  border-top: 2px solid $border;
   padding-top: 5px;
-  background-color: #fff;
+  background-color: $light;
 }
 
 .flight {
@@ -182,7 +216,7 @@ p {
 
 .rocket {
   padding-top: 5px;
-  border-top: 1px solid #ccc;
+  border-top: 1px dashed $border;
   align-items: flex-end;
   align-content: stretch;
   justify-content: center;
@@ -200,21 +234,24 @@ p {
 
 #labels > span {
   display: block;
+  white-space: nowrap;
   font-size: 1em;
-  font-weight: 600;
-  margin-left: 23px;
+  font-weight: 300;
+  margin-left: 1.5em;
   text-transform: uppercase;
   transform: rotate(90deg);
   transform-origin: left top 0;
-  width: 10px;
-  margin-top: 18px;
+  width: .1em;
+  color: $border;
 }
 
 footer {
-  font-size: 0.8em;
+  color: #fff;
+  text-align: center;
+  font-size: .8em;
   font-weight: 100;
   padding: 6px;
-  a {color: #333;}
+  a {color: $border;}
 }
 
 @media (max-height: 770px) {
@@ -232,9 +269,12 @@ footer {
   header > img, .github {display: none;}
 }
 @media (max-width: 400px) {
+  #infos > div {margin: 0;}
+  header {padding: 0 0 0 5px;}
   body{font-size: 12px;}
   #previous>b{display: block}
 }
 @media (max-width: 1100px) {
+  main {margin: 0;}
   header > span {display: none;}
 }
