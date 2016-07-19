@@ -51,21 +51,29 @@ function getDestination(destination, next) {
 }
 
 function printNext(next) {
-  document.getElementById('infos').innerHTML =
-    '<h2>Next mission</h2><div>' +
-    '<div><div id="next-mission"></div><span>Mission</span></div>' +
-    '<div id="countdown"><div><div id="days">00</div><span>days</span></div><div><div id="hours">00</div><span>hours</span></div><div><div id="minutes">00</div><span>minutes</span></div><div><div id="seconds">00</div><span>seconds</span></div></div>' +
-    '<div><div id="next-destination"></div><span>Destination</span></div>' +
-    '<div><div id="next-rocket"></div><span>Rocket</span></div></div>';
+  function setDiv(divDate) {
+    document.getElementById('infos').innerHTML =
+      '<h2>Next mission</h2><div>' +
+      '<div><div id="next-mission"></div><span>Mission</span></div>' +
+      divDate + '<div><div id="next-destination"></div><span>Destination</span></div>' +
+      '<div><div id="next-rocket"></div><span>Rocket</span></div></div>';
+  }
+  if (next.date.length > 7) {
+    setDiv('<div id="countdown"><div><div id="days">00</div><span>days</span></div><div><div id="hours">00</div>' +
+      '<span>hours</span></div><div><div id="minutes">00</div><span>minutes</span></div><div><div id="seconds">00' +
+      '</div><span>seconds</span></div></div>');
+    var t = new Date(next.date);
+    var time = t.getTime();
+    calcTimer(time);
+    timer = setInterval(function() {
+      calcTimer(time);
+    }, 1000);
+  } else {
+    setDiv('<div><div>August 2016</div><span>Date</span></div>');
+  }
   document.getElementById('next-destination').innerHTML = getDestination(next.payloads[0].destination, true);
   document.getElementById('next-rocket').innerHTML = getRocketName(next.rocket);
   document.getElementById('next-mission').innerHTML = next.payloads[0].name;
-  var t = new Date(next.date);
-  var time = t.getTime();
-  calcTimer(time);
-  timer = setInterval(function() {
-    calcTimer(time);
-  }, 1000);
 }
 
 function calcTimer(date) {
