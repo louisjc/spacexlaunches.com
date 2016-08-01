@@ -80,9 +80,10 @@ jsdom.env(
     data.forEach(function(ele) {
       $('#flights').append(
           $('<div/>', {class: 'flight ' + getRocketClass(ele.rocket, false)})
-            .append($('<span/>', {class: 'destination ' + ele.payloads[0].destination})
+            .append($('<span/>', {
+              class: 'destination ' + ele.payloads[0].destination, title: ele.payloads[0].destination})
               .html(getDestination(ele.payloads[0].success ? ele.payloads[0].destination : 'failure', false)))
-            .append($('<div/>', {class: 'rocket'}).html(getRocket(ele.rocket)))
+            .append($('<div/>', {class: 'rocket', title: getRocketName(ele.rocket)}).html(getRocket(ele.rocket)))
             .append($('<span/>', {class: 'name', text: ele.payloads[0].name}))
             .append($('<div/>', getOutcome(ele)))
       );
