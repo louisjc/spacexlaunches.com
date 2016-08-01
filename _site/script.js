@@ -1,12 +1,21 @@
 var timer;
+var defaultLayout = true;
 init();
 
 function reverse() {
-  var con = document.getElementById('flights');
-  var els = Array.prototype.slice.call(con.childNodes);
-  for (var i = els.length - 1; i >= 1; i--) {
-    console.log(els[i]);
-    con.appendChild(els[i]);
+  var divId;
+  var keep;
+  if (defaultLayout) {
+    divId = 'flights';
+    keep = 1;
+  } else {
+    divId = 'flights-table';
+    keep = 2;
+  }
+  var div = document.getElementById(divId);
+  var els = Array.prototype.slice.call(div.childNodes);
+  for (var i = els.length - 1; i >= keep; i--) {
+    div.appendChild(els[i]);
   }
 }
 
@@ -35,9 +44,16 @@ function init() {
 }
 
 function getRocketName(rocket) {
-  // TODO future proofing
-  var version = rocket.split('-')[0].split('_')[1];
-  return 'Falcon 9 v' + version;
+  var infos = rocket.split('-')[0].split('_');
+  var version = infos[1];
+  switch (infos[0]) {
+    case 'falcon1':
+      return 'Falcon 1';
+    case 'falcon9':
+      return 'Falcon 9 v' + version;
+    default:
+      return infos[0];
+  }
 }
 
 function getDestination(destination, next) {
@@ -108,4 +124,18 @@ function noInfoNext() {
 function zoom(sign) {
   var actual = parseFloat(document.getElementById('flights').style['font-size']) || 1;
   document.getElementById('flights').style['font-size'] = (actual + sign * 0.1).toFixed(1) + 'em';
+}
+
+document.getElementById('switchLayout').onclick = switchLayout;
+function switchLayout() {
+  if (defaultLayout) {
+    this.innerHTML = 'Show as list';
+    document.getElementById('flights').style.display = 'none';
+    document.getElementById('flights-table').style.display = '';
+  } else {
+    this.innerHTML = 'Show as table';
+    document.getElementById('flights').style.display = '';
+    document.getElementById('flights-table').style.display = 'none';
+  }
+  defaultLayout = !defaultLayout;
 }

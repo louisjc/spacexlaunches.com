@@ -10,6 +10,8 @@ $dark-text: #414141;
 .fail{color: #d9534f}
 .success{color: #5cb85c}
 .neutral{color: #f0ad4e}
+.grey{color: $border}
+
 * {box-sizing: border-box;}
 
 h2 {
@@ -160,9 +162,6 @@ p {
   flex-direction: row;
   min-height: 25em;
   overflow-x: scroll;
-  border-top: 2px solid $border;
-  padding-top: 5px;
-  background-color: $light;
 }
 
 .flight {
@@ -205,6 +204,32 @@ p {
     border: 1px solid;
     border-radius: 10px;
     min-width: 4.4em;
+  }
+}
+#flights, table {
+  border-top: 2px solid $border;
+  padding-top: 5px;
+  background-color: $light;
+}
+
+table {
+  width: 100%;
+  th {
+    border-bottom: 1px solid $border;
+    border-right: 1px solid $border;
+    font-variant: small-caps;
+  }
+  td {
+    padding: 2px 6px;
+    border-right: 1px dashed $border;
+    border-bottom: 1px dashed $border;
+    font-family: "Space Mono",monospace;
+  }
+  th,td {
+    text-align: center;
+    &:last-of-type {
+      border-right: 0;
+    }
   }
 }
 

@@ -20,12 +20,28 @@ function getRocket(rocket) {
 
 function getDestination(destination, next) {
   var res = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"';
-  if (!next) {res += '  viewBox="30 300 139 67">';}
-  else {res += 'width="2.6em" height="1.2em" viewBox="70 310 59 40">';}
+  if (!next) {
+    res += ' viewBox="30 300 139 67">';
+  } else {
+    res += ' width="2.6em" height="1.2em" viewBox="70 310 59 40">';
+  }
 
   res += '<use xlink:href="destinations.svg#' + destination + '"></use>';
 
   return res + '</svg>';
+}
+
+function getRocketName(rocket) {
+  var infos = rocket.split('-')[0].split('_');
+  var version = infos[1];
+  switch (infos[0]) {
+    case 'falcon1':
+      return 'Falcon 1';
+    case 'falcon9':
+      return 'Falcon 9 v' + version;
+    default:
+      return infos[0];
+  }
 }
 
 function getRocketClass(rocket) {
@@ -39,10 +55,10 @@ function getRocketClass(rocket) {
   return r.replace(/_|\./g, '');
 }
 
-function getOutcome(launch) {
+function getLandingOutcome(launch, showMissionFail) {
   var res = {class: 'outcome'};
 
-  if (!launch.payloads[0].success) {
+  if (!launch.payloads[0].success && showMissionFail) {
     res.html = '<span>';
     res.html += '// Failure \\\\';
     res.class += ' fail';
@@ -62,11 +78,36 @@ function getOutcome(launch) {
       res.class += ' fail';
     }
     res.html += '</span>';
+  } else if (!showMissionFail) {
+    res.html = '<span>';
+    res.html += 'No attempt';
+    res.html += '</span>';
+    res.class += ' grey';
+  }
+  return res;
+}
+
+function getMissionOutcome(launch) {
+  var res = {};
+  if (launch.payloads[0].success) {
+    res.class = 'success';
+    res.html = 'Success';
+  } else {
+    res.class = 'fail';
+    res.html = 'Failure';
   }
   return res;
 }
 
 // ====== Main ======
+
+function printDate(stdate) {
+  var date = new Date(stdate);
+  var day = ('0' + date.getDate()).slice(-2);
+  var month = ('0' + date.getMonth()).slice(-2);
+  var year = date.getFullYear();
+  return day + '/' + month + '/' + year;
+}
 
 jsdom.env(
   htmlSource,
@@ -85,7 +126,16 @@ jsdom.env(
               .html(getDestination(ele.payloads[0].success ? ele.payloads[0].destination : 'failure', false)))
             .append($('<div/>', {class: 'rocket', title: getRocketName(ele.rocket)}).html(getRocket(ele.rocket)))
             .append($('<span/>', {class: 'name', text: ele.payloads[0].name}))
-            .append($('<div/>', getOutcome(ele)))
+            .append($('<div/>', getLandingOutcome(ele, true)))
+      );
+      $('#flights-table').append(
+        $('<tr/>')
+        .append($('<td/>').html(printDate(ele.date)))
+        .append($('<td/>').html(getRocketName(ele.rocket)))
+        .append($('<td/>', {style: 'text-align: left'}).html(ele.payloads[0].name))
+        .append($('<td/>').html(ele.payloads[0].destination))
+        .append($('<td/>', getMissionOutcome(ele)))
+        .append($('<td/>', getLandingOutcome(ele, false)))
       );
     });
     $('#launches').html('(' + data.length + ')');
