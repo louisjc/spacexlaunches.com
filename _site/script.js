@@ -74,18 +74,21 @@ function printNext(next) {
       divDate + '<div><div id="next-destination"></div><span>Destination</span></div>' +
       '<div><div id="next-rocket"></div><span>Rocket</span></div></div>';
   }
+  var t = new Date(next.date);
   if (next.date.length > 7) {
     setDiv('<div id="countdown"><div><div id="days">00</div><span>days</span></div><div><div id="hours">00</div>' +
       '<span>hours</span></div><div><div id="minutes">00</div><span>minutes</span></div><div><div id="seconds">00' +
       '</div><span>seconds</span></div></div>');
-    var t = new Date(next.date);
     var time = t.getTime();
     calcTimer(time);
     timer = setInterval(function() {
       calcTimer(time);
     }, 1000);
   } else {
-    setDiv('<div><div>August 2016</div><span>Date</span></div>');
+    var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+      'November', 'December'];
+    var monthIndex = t.getMonth();
+    setDiv('<div><div>' + monthNames[monthIndex] + ' ' + t.getFullYear() + '</div><span>Date</span></div>');
   }
   document.getElementById('next-destination').innerHTML = getDestination(next.payloads[0].destination, true);
   document.getElementById('next-rocket').innerHTML = getRocketName(next.rocket);
