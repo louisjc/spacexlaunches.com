@@ -104,7 +104,7 @@ function getMissionOutcome(launch) {
 function printDate(stdate) {
   var date = new Date(stdate);
   var day = ('0' + date.getDate()).slice(-2);
-  var month = ('0' + date.getMonth()).slice(-2);
+  var month = ('0' + (date.getMonth() + 1)).slice(-2);
   var year = date.getFullYear();
   return day + '/' + month + '/' + year;
 }
