@@ -143,7 +143,7 @@ jsdom.env(
             )
       );
       // Table
-      $('#flights-table').append(
+      $('#flights-table').first().append(
         $('<tr/>')
         .append($('<td/>').html(printDate(ele.date)))
         .append($('<td/>').html(getRocketName(ele.rocket)))

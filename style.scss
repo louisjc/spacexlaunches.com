@@ -175,11 +175,11 @@ p {
   display: flex;
   flex-direction: column;
   width: 5.6em;
+  flex-shrink: 0;
   .destination {
     align-content: stretch;
     justify-content: center;
     display: flex;
-    flex: 1 0 0;
     margin: 5px 0;
     min-height: 5em;
     svg{
@@ -267,7 +267,6 @@ table {
   align-content: stretch;
   justify-content: center;
   display: flex;
-  flex: 1 0 0;
   svg{
     width: 3.1em
   }
