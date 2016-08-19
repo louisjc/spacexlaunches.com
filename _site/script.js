@@ -68,7 +68,7 @@ function getDestination(destination, next) {
 
 function printNext(next) {
   function setDiv(divDate) {
-    document.getElementById('infos').innerHTML =
+    document.getElementById('next').innerHTML =
       '<h2>Next mission</h2><div>' +
       '<div><div id="next-mission"></div><span>Mission</span></div>' +
       divDate + '<div><div id="next-destination"></div><span>Destination</span></div>' +
@@ -119,25 +119,27 @@ function calcTimer(date) {
 }
 
 function noInfoNext() {
-  document.getElementById('infos').innerHTML =
+  document.getElementById('next').innerHTML =
    '<h2>Next mission</h2><p>No information for the next mission. ' +
    'You can <a href="https://github.com/spacexlaunches/spacexlaunches.com">contribute on GitHub</a>.</p>';
 }
 
 function zoom(sign) {
-  var actual = parseFloat(document.getElementById('flights').style['font-size']) || 1;
-  document.getElementById('flights').style['font-size'] = (actual + sign * 0.1).toFixed(1) + 'em';
+  var actual = parseFloat(document.getElementById('flights-container').style['font-size']) || 1;
+  document.getElementById('flights-container').style['font-size'] = (actual + sign * 0.1).toFixed(1) + 'em';
 }
 
 document.getElementById('switchLayout').onclick = switchLayout;
 function switchLayout() {
   if (defaultLayout) {
     this.innerHTML = 'Show as list';
-    document.getElementById('flights').style.display = 'none';
+    document.getElementById('flights-container').style.display = 'none';
+    document.getElementById('years').style.display = 'none';
     document.getElementById('flights-table').style.display = '';
   } else {
     this.innerHTML = 'Show as table';
-    document.getElementById('flights').style.display = '';
+    document.getElementById('flights-container').style.display = '';
+    document.getElementById('years').style.display = '';
     document.getElementById('flights-table').style.display = 'none';
   }
   defaultLayout = !defaultLayout;

@@ -109,6 +109,11 @@ function printDate(stdate) {
   return day + '/' + month + '/' + year;
 }
 
+function getYear(stdate) {
+  var date = new Date(stdate);
+  return date.getFullYear();
+}
+
 jsdom.env(
   htmlSource,
   ['https://code.jquery.com/jquery.js'],
@@ -116,18 +121,28 @@ jsdom.env(
     var $ = require('jquery')(window);
 
     // Previous launches
+    var years = {};
     var data = JSON.parse(fs.readFileSync('data/launches.json', 'utf8'));
     data.reverse();
     data.forEach(function(ele) {
+      if (typeof years[getYear(ele.date)] != 'undefined') {
+        years[getYear(ele.date)] += 1;
+      } else {
+        years[getYear(ele.date)] = 1;
+      }
+      // List
       $('#flights').append(
           $('<div/>', {class: 'flight ' + getRocketClass(ele.rocket, false)})
             .append($('<span/>', {
               class: 'destination ' + ele.payloads[0].destination, title: ele.payloads[0].destination})
               .html(getDestination(ele.payloads[0].success ? ele.payloads[0].destination : 'failure', false)))
             .append($('<div/>', {class: 'rocket', title: getRocketName(ele.rocket)}).html(getRocket(ele.rocket)))
-            .append($('<span/>', {class: 'name', text: ele.payloads[0].name}))
-            .append($('<div/>', getLandingOutcome(ele, true)))
+            .append($('<div/>', {class: 'caption'})
+              .append($('<span/>', {class: 'name', text: ele.payloads[0].name}))
+              .append($('<div/>', getLandingOutcome(ele, true)))
+            )
       );
+      // Table
       $('#flights-table').append(
         $('<tr/>')
         .append($('<td/>').html(printDate(ele.date)))
@@ -137,6 +152,9 @@ jsdom.env(
         .append($('<td/>', getMissionOutcome(ele)))
         .append($('<td/>', getLandingOutcome(ele, false)))
       );
+    });
+    $.each(years, function(index, value) {
+      $('#years').prepend($('<span/>', {style: 'width: ' + (value * 5.6 / 0.8).toFixed(1) + 'em'}).html(index));
     });
     $('#launches').html('(' + data.length + ')');
 

@@ -1,4 +1,4 @@
-// scss-lint:disable PropertySortOrder, EmptyLineBetweenBlocks
+// scss-lint:disable PropertySortOrder, EmptyLineBetweenBlocks, SingleLinePerSelector
 @import "normalize.scss";
 
 $light: #fafafa;
@@ -64,7 +64,7 @@ main {
   margin: 0 25px;
 }
 
-#infos {
+#next {
   text-align: center;
   p {
     color: #fff;
@@ -155,20 +155,26 @@ p {
   }
 }
 
+#flights-container {
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+  border-bottom: 5px solid $border;
+}
+
 #flights {
   font-size: 1em;
   align-content: stretch;
   display: flex;
   flex-direction: row;
   min-height: 25em;
-  overflow-x: scroll;
 }
 
 .flight {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  min-width: 5.6em;
+  width: 5.6em;
   .destination {
     align-content: stretch;
     justify-content: center;
@@ -206,7 +212,8 @@ p {
     min-width: 4.4em;
   }
 }
-#flights, table {
+
+#flights-container, table {
   border-top: 2px solid $border;
   padding-top: 5px;
   background-color: $light;
@@ -234,6 +241,20 @@ table {
 }
 
 
+#years {
+  //TODO because of labels
+  letter-spacing: 0.4em;
+  margin-left: 2em;
+  color: #404040;
+  white-space: nowrap;
+  //background-color: $border;
+  text-align: center;
+  font-size: .8em;
+  > span {
+    display: inline-block;
+    border-right: 1px solid $border;
+  }
+}
 
 .failure, .LEO, .Polar, .ISS, .MEO {align-items: flex-end;}
 .GTO, .GEO {align-items: center;}
@@ -281,6 +302,7 @@ footer {
 
 @media (max-height: 770px) {
   #labels {display: none;}
+  #years {margin-left: 0;}
   .flight .destination {
     align-items: flex-end;
     align-content: stretch;
@@ -297,7 +319,7 @@ footer {
   #previous b {display: block;}
 }
 @media (max-width: 400px) {
-  #infos > div {margin: 0;}
+  #next > div {margin: 0;}
   header {padding: 0 0 0 5px;}
   body{font-size: 12px;}
   #previous>b{display: block}
