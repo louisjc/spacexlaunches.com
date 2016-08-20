@@ -1,5 +1,6 @@
 var timer;
 var defaultLayout = true;
+var moreNext = false;
 init();
 
 function reverse() {
@@ -26,15 +27,20 @@ function init() {
     if (request.status >= 200 && request.status < 400) {
       var data = JSON.parse(request.responseText);
       var now = new Date();
-      var success = data.some(function(ele) {
+      var i = 0;
+      data.forEach(function(ele, index) {
         var t = new Date(ele.date);
         var time = t.getTime();
         if (time - now.getTime() > 0) {
-          printNext(ele);
-          return true;
+          i += 1;
+          printNext(ele, i);
         }
       });
-      if (!success) {noInfoNext();}
+      if (i == 0) {noInfoNext();}
+      if (i > 1) {
+        document.getElementById('next').innerHTML +=
+          '<span id="togglenext" onclick="toggleNext()">Show more ▼</span>';
+      }
     } else {
       noInfoNext();
     }
@@ -66,23 +72,29 @@ function getDestination(destination, next) {
   return res + '</svg>';
 }
 
-function printNext(next) {
+function printNext(next, id) {
   function setDiv(divDate) {
-    document.getElementById('next').innerHTML =
-      '<h2>Next mission</h2><div>' +
-      '<div><div id="next-mission"></div><span>Mission</span></div>' +
-      divDate + '<div><div id="next-destination"></div><span>Destination</span></div>' +
-      '<div><div id="next-rocket"></div><span>Rocket</span></div></div>';
+    var html = '<div id="next-' + id + '"><div><div class="next-mission"></div><span>Mission</span></div>' +
+      divDate + '<div><div class="next-destination"></div><span>Destination</span></div>' +
+      '<div><div class="next-rocket"></div><span>Rocket</span></div></div>';
+    if (id == 1) {
+      document.getElementById('next').innerHTML = '<h2>Next mission</h2>' +
+        '<div>' + html + '</div><div id="more-next" class="hide"></div>';
+    } else {
+      document.getElementById('more-next').innerHTML += html;
+    }
   }
   var t = new Date(next.date);
   if (next.date.length > 7) {
-    setDiv('<div id="countdown"><div><div id="days">00</div><span>days</span></div><div><div id="hours">00</div>' +
-      '<span>hours</span></div><div><div id="minutes">00</div><span>minutes</span></div><div><div id="seconds">00' +
-      '</div><span>seconds</span></div></div>');
+    setDiv('<div id="countdown"><div>' +
+      '<div class="days">00</div><span>days</span></div>' +
+      '<div><div class="hours">00</div><span>hours</span></div>' +
+      '<div><div class="minutes">00</div><span>minutes</span></div>' +
+      '<div><div class="seconds">00</div><span>seconds</span></div></div>');
     var time = t.getTime();
-    calcTimer(time);
+    calcTimer(time, id);
     timer = setInterval(function() {
-      calcTimer(time);
+      calcTimer(time, id);
     }, 1000);
   } else {
     var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
@@ -90,12 +102,13 @@ function printNext(next) {
     var monthIndex = t.getMonth();
     setDiv('<div><div>' + monthNames[monthIndex] + ' ' + t.getFullYear() + '</div><span>Date</span></div>');
   }
-  document.getElementById('next-destination').innerHTML = getDestination(next.payloads[0].destination, true);
-  document.getElementById('next-rocket').innerHTML = getRocketName(next.rocket);
-  document.getElementById('next-mission').innerHTML = next.payloads[0].name;
+  var div = document.getElementById('next-' + id);
+  div.getElementsByClassName('next-destination')[0].innerHTML = getDestination(next.payloads[0].destination, true);
+  div.getElementsByClassName('next-rocket')[0].innerHTML = getRocketName(next.rocket);
+  div.getElementsByClassName('next-mission')[0].innerHTML = next.payloads[0].name;
 }
 
-function calcTimer(date) {
+function calcTimer(date, id) {
   var now = new Date();
   var difference = date - now.getTime();
   if (difference <= 0) {
@@ -111,10 +124,12 @@ function calcTimer(date) {
     minutes %= 60;
     seconds %= 60;
 
-    document.getElementById('days').innerHTML = days;
-    document.getElementById('hours').innerHTML = hours;
-    document.getElementById('minutes').innerHTML = minutes;
-    document.getElementById('seconds').innerHTML = seconds;
+    var div = document.getElementById('next-' + id);
+
+    div.getElementsByClassName('days')[0].innerHTML = days;
+    div.getElementsByClassName('hours')[0].innerHTML = hours;
+    div.getElementsByClassName('minutes')[0].innerHTML = minutes;
+    div.getElementsByClassName('seconds')[0].innerHTML = seconds;
   }
 }
 
@@ -127,6 +142,12 @@ function noInfoNext() {
 function zoom(sign) {
   var actual = parseFloat(document.getElementById('flights-container').style['font-size']) || 1;
   document.getElementById('flights-container').style['font-size'] = (actual + sign * 0.1).toFixed(1) + 'em';
+}
+
+function toggleNext() {
+  document.getElementById('more-next').className = moreNext ? 'hide' : 'show';
+  document.getElementById('togglenext').innerHTML = moreNext ? 'Show more ▼' : 'Hide ▲';
+  moreNext = !moreNext;
 }
 
 document.getElementById('switchLayout').onclick = switchLayout;

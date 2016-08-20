@@ -85,7 +85,7 @@ main {
     >div {width: 4em;font-size: 1em !important;}
     >div>div{font-size: 3em !important;}
   }
-  >div {
+  >div>div {
     background-color: $light;
     border-color: $border;
     border-radius: 4px;
@@ -95,7 +95,7 @@ main {
     margin: 5px 10px 0;
     text-align: center;
   }
-  >div>div {
+  >div>div>div {
     border-left: 1px dashed $border;
     padding:7px 12px 0 10px;
     display: inline-block;
@@ -111,7 +111,27 @@ main {
       }
     }
   }
+}
 
+.hide {
+  overflow: hidden;
+  max-height: 0;
+  transition-duration: .5s;
+}
+
+.show {
+  transition-duration: 1s;
+  transition-timing-function: ease-in;
+  max-height: 1000px;
+  overflow: hidden;
+}
+
+#togglenext {
+  display: block;
+  text-align: center;
+  color: $border;
+  font-size: 1.3em;
+  cursor: pointer;
 }
 
 p {
@@ -318,7 +338,7 @@ footer {
   #previous b {display: block;}
 }
 @media (max-width: 400px) {
-  #next > div {margin: 0;}
+  #next > div > div {margin: 0;}
   header {padding: 0 0 0 5px;}
   body{font-size: 12px;}
   #previous>b{display: block}
