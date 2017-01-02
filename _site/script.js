@@ -133,7 +133,7 @@ function calcTimer(date, id) {
 function noInfoNext() {
   document.getElementById('next').innerHTML =
    '<h2>Next mission</h2><p>No information for the next mission. ' +
-   'You can <a href="https://github.com/spacexlaunches/spacexlaunches.com">contribute on GitHub</a>.</p>';
+   'You can <a href="https://github.com/spacexlaunches/launches-data">contribute on GitHub</a>.</p>';
 }
 
 function zoom(sign) {
