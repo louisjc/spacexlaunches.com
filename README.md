@@ -12,6 +12,7 @@ You'll need [Sass](http://sass-lang.com/) and [node.js](https://nodejs.org/) (wi
 
 ```bash
 $ git clone https://github.com/spacexlaunches/data.git data
+$ cp -r data/patches _site/patches
 $ gem install sass
 $ sudo apt-get install nodejs
 $ npm install jsdom jquery

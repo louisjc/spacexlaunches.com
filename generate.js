@@ -130,6 +130,8 @@ jsdom.env(
       } else {
         years[getYear(ele.date)] = 1;
       }
+      var patchFileName = ele.payloads[0].name.replace(/([^a-z0-9]+)/gi, '-').replace(/-$/, '').toLowerCase();
+      patchFileName += '.png';
       // List
       $('#flights').append(
           $('<div/>', {class: 'flight ' + getRocketClass(ele.rocket, false)})
@@ -141,6 +143,7 @@ jsdom.env(
               .append($('<span/>', {class: 'name', text: ele.payloads[0].name}))
               .append($('<div/>', getLandingOutcome(ele, true)))
             )
+            .append($('<img />', {class: 'patch', src: 'patches/' + patchFileName, width: '5em', height: '5em'}))
       );
       // Table
       $('#flights-table').first().append(
