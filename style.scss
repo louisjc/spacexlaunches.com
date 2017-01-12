@@ -104,7 +104,10 @@ main {
     border-left: 1px dashed $border;
     padding:7px 12px 0 10px;
     display: inline-block;
-    &:first-of-type {border-left: 0;}
+    &:first-of-type {
+      min-width: 250px;
+      border-left: 0;
+    }
     >div {
       display: inline-block;
       text-align: center;
