@@ -235,7 +235,15 @@ main {
   .patch {
     align-self: center;
     margin-bottom: 10px;
+    cursor: pointer;
   }
+}
+
+#patch-hover{
+  border: 2px solid $border;
+  background-color: rgba(48, 62, 73, .9);;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 #flights-container, table {

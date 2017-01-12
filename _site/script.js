@@ -21,6 +21,16 @@ function reverse() {
 }
 
 function init() {
+  $('.patch').each(function() {
+    $(this).click(function(e) {$('#patch-hover').attr({src: this.src}).fadeIn('fast');});
+    $(this).mouseleave(function() {$('#patch-hover').fadeOut('fast');});
+    $(this).mousemove(function(e) {
+      $('#patch-hover')
+      .css('left', e.pageX + 5 + 'px')
+      .css('top', e.pageY + 5 + 'px');
+    });
+  });
+
   var request = new XMLHttpRequest();
   request.open('GET', 'next.json', true);
   request.onload = function() {
