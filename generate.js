@@ -161,6 +161,15 @@ jsdom.env(
     });
     $('#launches').html('(' + data.length + ')');
 
+    // Remove jsdom scripts (jquery)
+    var scripts = window.document.getElementsByTagName('script');
+    var i = scripts.length;
+    while (i--) {
+      if(scripts[i].className == 'jsdom') {
+        scripts[i].parentNode.removeChild(scripts[i]);
+      }
+    }
+
     // Write file
     fs.writeFile('_site/index.html', '<!DOCTYPE html>' + window.document.documentElement.outerHTML,
       function(error) {if (error) {throw error;}}
