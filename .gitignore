@@ -2,5 +2,6 @@ _site/style.css
 _site/index.html
 _site/style.css.map
 _site/next.json
+node_modules
 .sass-cache/
 data/
