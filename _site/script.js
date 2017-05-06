@@ -78,41 +78,45 @@ function getDestination(destination) {
     '<use xlink:href="destinations.svg#' + destination + '"></use></svg>';
 }
 
+function addRow(next) {
+  var table = document.getElementById('next-table');
+  table.innerHTML += '<tr><td>' + next.payloads[0].name + '</td><td> ' + next.dateString
+                 + '</td><td>' + getDestination(next.payloads[0].destination)
+                 + '</td><td>' + getRocketName(next.rocket) + '</td></tr>';
+}
+
 function printNext(next, id) {
-  function setDiv(divDate) {
-    var html = '<div id="next-' + id + '"><div><div class="next-mission"></div><span>Mission</span></div>' +
-      divDate + '<div><div class="next-destination"></div><span>Destination</span></div>' +
-      '<div><div class="next-rocket"></div><span>Rocket</span></div></div>';
-    if (id == 1) {
+  if (id == 1) {
+    function setDiv(divDate) {
+      var html = '<div id="next-' + id + '"><div><div class="next-mission"></div><span>Mission</span></div>' +
+        divDate + '<div><div class="next-destination"></div><span>Destination</span></div>' +
+        '<div><div class="next-rocket"></div><span>Rocket</span></div></div>';
       document.getElementById('next').innerHTML = '<h2>Next mission</h2>' +
-        '<div>' + html + '</div><div id="more-next" class="hide"></div>';
-    } else {
-      document.getElementById('more-next').innerHTML += html;
+          '<div>' + html + '</div><div id="more-next"><table class="hide" id="next-table-warper"><tbody id="next-table"></tbody></table></div>';
     }
-  }
-  var t = new Date(next.date);
-  if (next.date.length > 7) {
-    setDiv('<div id="countdown"><div>' +
-      '<div class="days">00</div><span>days</span></div>' +
-      '<div><div class="hours">00</div><span>hours</span></div>' +
-      '<div><div class="minutes">00</div><span>minutes</span></div>' +
-      '<div><div class="seconds">00</div><span>seconds</span></div></div>');
-    var time = t.getTime();
-    calcTimer(time, id);
-    timer = setInterval(function() {
+    var t = new Date(next.date);
+    if (next.date.length > 7) {
+      setDiv('<div id="countdown"><div>' +
+        '<div class="days">00</div><span>days</span></div>' +
+        '<div><div class="hours">00</div><span>hours</span></div>' +
+        '<div><div class="minutes">00</div><span>minutes</span></div>' +
+        '<div><div class="seconds">00</div><span>seconds</span></div></div>');
+      var time = t.getTime();
       calcTimer(time, id);
-    }, 1000);
+      timer = setInterval(function() {
+        calcTimer(time, id);
+      }, 1000);
+    } else {
+      setDiv('<div class="date"><div>' + next.dateString + '</div><span>Date</span></div>');
+    }
+    var div = document.getElementById('next-' + id);
+    div.getElementsByClassName('next-destination')[0].title = next.payloads[0].destination;
+    div.getElementsByClassName('next-destination')[0].innerHTML = getDestination(next.payloads[0].destination);
+    div.getElementsByClassName('next-rocket')[0].innerHTML = getRocketName(next.rocket);
+    div.getElementsByClassName('next-mission')[0].innerHTML = next.payloads[0].name;
   } else {
-    var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
-      'November', 'December'];
-    var monthIndex = t.getMonth();
-    setDiv('<div><div>' + monthNames[monthIndex] + ' ' + t.getFullYear() + '</div><span>Date</span></div>');
+    addRow(next);
   }
-  var div = document.getElementById('next-' + id);
-  div.getElementsByClassName('next-destination')[0].title = next.payloads[0].destination;
-  div.getElementsByClassName('next-destination')[0].innerHTML = getDestination(next.payloads[0].destination);
-  div.getElementsByClassName('next-rocket')[0].innerHTML = getRocketName(next.rocket);
-  div.getElementsByClassName('next-mission')[0].innerHTML = next.payloads[0].name;
 }
 
 function calcTimer(date, id) {
@@ -152,7 +156,7 @@ function zoom(sign) {
 }
 
 function toggleNext() {
-  document.getElementById('more-next').className = moreNext ? 'hide' : 'show';
+  document.getElementById('next-table-warper').className = moreNext ? 'hide' : 'show';
   document.getElementById('togglenext').innerHTML = moreNext ? 'Show more ▼' : 'Hide ▲';
   moreNext = !moreNext;
 }

@@ -38,7 +38,7 @@ body {
 header {
   color: #fff;
   height: 5.6em;
-  padding: 16px 33px;
+  padding: 16px 33px 0;
   >img {
     margin-top: 14px;
     display: inline;
@@ -50,7 +50,7 @@ header {
     font-size: 2.8em;
     font-variant: small-caps;
     font-weight: 400;
-    margin: 0.4em 12px 0 0;
+    margin: .46em 12px 0 0;
     display: inline-block;
   }
 }
@@ -100,6 +100,9 @@ main {
     margin: 5px 10px 0;
     text-align: center;
   }
+  .date {
+    min-width: 345px;
+  }
   >div>div>div {
     border-left: 1px dashed $border;
     padding:7px 12px 0 10px;
@@ -120,6 +123,16 @@ main {
     }
   }
 }
+#more-next {
+  text-align: center;
+  font-size: 0;
+  table {
+    font-size: 1rem;
+    background-color: $light;
+    @media (min-width: 817px) {width: 817px;}
+    display: inline-block;
+  }
+}
 
 .hide {
   overflow: hidden;
@@ -130,8 +143,8 @@ main {
 .show {
   transition-duration: 1s;
   transition-timing-function: ease-in;
-  max-height: 1000px;
-  overflow: hidden;
+  max-height: 500px;
+  overflow: scroll;
 }
 
 #togglenext {
@@ -246,7 +259,7 @@ main {
   border-radius: 5px;
 }
 
-#flights-container, table {
+#flights-container, #flights-table {
   border-top: 2px solid $border;
   padding-top: 5px;
   background-color: $light;
