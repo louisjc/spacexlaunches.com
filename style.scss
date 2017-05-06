@@ -25,7 +25,7 @@ h2 {
   }
 }
 
-body, h1, h2, h3, h4, h5 {font-family: "Open sans",sans-serif;}
+body, h1, h2, h3, h4, h5 {font-family:-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
 
 html {height: 100%;}
 body {
@@ -38,9 +38,9 @@ body {
 header {
   color: #fff;
   height: 5.6em;
-  padding: 10px 33px;
+  padding: 16px 33px;
   >img {
-    margin-top: 21px;
+    margin-top: 14px;
     display: inline;
     float: right;
     height: 3.1em;
@@ -49,7 +49,7 @@ header {
     color: #fff;
     font-size: 2.8em;
     font-variant: small-caps;
-    font-weight: 100;
+    font-weight: 400;
     margin: 0.4em 12px 0 0;
     display: inline-block;
   }
@@ -87,7 +87,7 @@ main {
   }
   #countdown{
     padding-right: 15px;
-    >div {width: 4em;font-size: 1em !important;}
+    >div {width: 5em;font-size: 1em !important;}
     >div>div{font-size: 3em !important;}
   }
   >div>div {
@@ -263,7 +263,7 @@ table {
     padding: 2px 6px;
     border-right: 1px dashed $border;
     border-bottom: 1px dashed $border;
-    font-family: "Space Mono",monospace;
+    font-family: Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
   }
   th,td {
     text-align: center;
