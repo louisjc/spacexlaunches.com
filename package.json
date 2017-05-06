@@ -1,0 +1,20 @@
+{
+  "name": "spacexlaunches.com",
+  "description": "Previous SpaceX launches and next mission",
+  "main": "generate.js",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "jsdom": "^9.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "serve": "cd _site && python -m SimpleHTTPServer 4000",
+    "build:css": "sass --style compressed style.scss _site/style.css",
+    "build:js": "node generate.js",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spacexlaunches/spacexlaunches.com.git"
+  }
+}

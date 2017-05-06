@@ -7,15 +7,13 @@ build:
               git clone https://github.com/spacexlaunches/launches-data.git data
               cp -r data/patches _site/patches
         - script:
-            name: SASS
+            name: Install dependencies
             code: |
-              gem install sass
-              sass --style compressed --sourcemap=none style.scss _site/style.css
+              npm install
         - script:
             name: Generate site
             code: |
-              npm install jsdom jquery
-              node generate.js
+              npm run build
               cp -r _site "$WERCKER_OUTPUT_DIR"
         - script:
             name: Copy s3_website.yml
