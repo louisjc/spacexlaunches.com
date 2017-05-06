@@ -27,7 +27,7 @@ function init() {
     $(this).mousemove(function(e) {
       $('#patch-hover')
       .css('left', e.pageX + 5 + 'px')
-      .css('top', e.pageY + 5 + 'px');
+      .css('top', e.pageY - 225 - 15 + 'px');
     });
   });
 
