@@ -20,7 +20,7 @@
         <path d="M496 140.36a16 4 0 0 1-8 3.47 16 4 0 0 1-16 0 16 4 0 0 1-8-3.47" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#fff"/>
         <path d="M493.86 138.36a16 4 0 0 1-3.58 5.07 16 4 0 0 1-20.56 0 16 4 0 0 1-3.58-5.07" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
       </g>
-      <g id="GTO" transform="translate(-613 319)">
+      <g id="GTOp" transform="translate(-613 319)">
         <g transform="translate(-440.012 -118.965)">
           <ellipse cx="1152.01" cy="132.37" rx="36.01" ry="8.01" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
           <use xlink:href="#earth2"/>
@@ -35,7 +35,7 @@
           <rect ry="0" rx="0" y="-1161" x="111.37" height="8" width="2" transform="rotate(90)"/>
         </g>
       </g>
-      <g id="GEO" transform="translate(-613 319)">
+      <g id="GTO" transform="translate(-613 319)">
         <g transform="translate(-440.012 -118.965)">
           <ellipse cx="1152.01" cy="132.37" rx="36.01" ry="8.01" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
           <use xlink:href="#earth2"/>
