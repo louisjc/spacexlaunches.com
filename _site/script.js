@@ -75,7 +75,7 @@ function getRocketName(rocket) {
 function getDestination(destination) {
   return '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"' +
     'width="2.6em" height="1.2em" viewBox="70 310 59 40">' +
-    '<use xlink:href="destinations.svg#' + destination + '"></use></svg>';
+    '<use xlink:href="img/destinations.svg#' + destination + '"></use></svg>';
 }
 
 function addRow(next) {

@@ -8,11 +8,11 @@ function getRocket(rocket) {
   var options = rocket.split('-');
   var res = '<svg xmlns="http://www.w3.org/2000/svg" ' +
   'xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 535">';
-  res += '<use xlink:href="rockets.svg#' + options[0] + '"></use>';
+  res += '<use xlink:href="img/rockets.svg#' + options[0] + '"></use>';
 
   if (options.length > 1) {
     for (var i = 1; i < options.length; i++) {
-      res += '<use xlink:href="rockets.svg#' + options[i] + '"></use>';
+      res += '<use xlink:href="img/rockets.svg#' + options[i] + '"></use>';
     }
   }
   return res + '</svg>';
@@ -26,7 +26,7 @@ function getDestination(destination, next) {
     res += ' width="2.6em" height="1.2em" viewBox="70 310 59 40">';
   }
 
-  res += '<use xlink:href="destinations.svg#' + destination + '"></use>';
+  res += '<use xlink:href="img/destinations.svg#' + destination + '"></use>';
 
   return res + '</svg>';
 }
