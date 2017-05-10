@@ -114,6 +114,14 @@ function getYear(stdate) {
   return date.getFullYear();
 }
 
+function getsrcset(patchFileName) {
+  var res = '';
+  [100, 200].forEach(function(val) {
+    res += 'patches/' + val + 'px/' + patchFileName + ' ' + val + 'w, ';
+  });
+  return res.slice(0, -2);
+}
+
 jsdom.env(
   htmlSource,
   ['https://code.jquery.com/jquery.js'],

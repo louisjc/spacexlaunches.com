@@ -7,6 +7,10 @@ build:
               git clone https://github.com/spacexlaunches/launches-data.git data
               cp -r data/patches _site/patches
         - script:
+            name: Resize patches
+            code: |
+              ./resize-patches.sh
+        - script:
             name: Install dependencies
             code: |
               npm install
