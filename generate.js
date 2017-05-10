@@ -143,7 +143,7 @@ jsdom.env(
               .append($('<span/>', {class: 'name', text: ele.payloads[0].name}))
               .append($('<div/>', getLandingOutcome(ele, true)))
             )
-            .append($('<img />', {class: 'patch', src: 'patches/' + patchFileName, width: '5em', height: '5em'}))
+            .append($('<img />', {class: 'patch', src: 'patches/' + patchFileName, srcset: getsrcset(patchFileName), width: '5em', height: '5em', alt: ele.payloads[0].name + ' patch'}))
       );
       // Table
       $('#flights-table').first().append(
