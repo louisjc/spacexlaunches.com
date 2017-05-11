@@ -151,8 +151,9 @@ function noInfoNext() {
 }
 
 function zoom(sign) {
-  var actual = parseFloat(document.getElementById('flights-container').style['font-size']) || 1;
-  document.getElementById('flights-container').style['font-size'] = (actual + sign * 0.1).toFixed(1) + 'em';
+  var actual = parseFloat(document.getElementById('flights').style['font-size']) || 1;
+  document.getElementById('flights').style['font-size'] = (actual + sign * 0.1).toFixed(1) + 'em';
+  document.getElementById('years').style['font-size'] = (actual + sign * 0.1).toFixed(1) + 'em';
 }
 
 function toggleNext() {

@@ -14,14 +14,21 @@ $dark-text: #414141;
 
 * {box-sizing: border-box;}
 
-h2 {
+h2,h3 {
   font-weight: 600;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin: 2px 7px 0;
   font-variant: small-caps;
   &::before{
     content: "// "
+  }
+  small {
+    color: $border;
+    font-style: oblique;
+    margin-left: 8px;
+    display: inline-block;
+    > a {font-variant-caps: all-small-caps;}
   }
 }
 
@@ -91,20 +98,23 @@ main {
     >div>div{font-size: 3em !important;}
   }
   >div>div {
+    @media (min-width: 850px) {
+      border-radius: 4px;
+      margin: 5px 10px 0;
+      border-width: 2px 1px 1px;
+    }
     background-color: $light;
     border-color: $border;
-    border-radius: 4px;
     border-style: solid;
-    border-width: 2px 1px 1px;
+    border-width: 2px 0 1px;
     display: inline-block;
-    margin: 5px 10px 0;
     text-align: center;
   }
   .date {
     min-width: 345px;
   }
   >div>div>div {
-    border-left: 1px dashed $border;
+    @media (min-width: 900px) {border-left: 1px dashed $border;}
     padding:7px 12px 0 10px;
     display: inline-block;
     &:first-of-type {
@@ -159,37 +169,54 @@ main {
   clear: both;
   padding-top: 14px;
   position: relative;
-  h2 {display: inline}
-  b {
-    color: $border;
-    font-style: oblique;
-    font-size: 1em;
-    margin-left: 8px;
-  }
   a {color: $border;}
 }
 
+@media (max-width: 800px) {
+  h2 {
+    padding: 15px 0;
+    margin: 0;
+    text-align: center;
+  }
+}
+
+button, .button {
+  @media (max-width: 800px) {
+    padding: 7px 13px;
+    border-radius: 4px;
+    margin: 3px 3px;
+    font-size: 1.2em;
+  }
+  font-variant: small-caps;
+  color: $dark-text;
+  background-color: #fff;
+  border-color: $border;
+  border-style: solid solid none;
+  border-width: 2px 1px 0;
+  cursor: pointer;
+  padding: 1px 8px;
+  &:hover {
+    background-color: $border;
+  }
+}
+
+
 #buttons {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  margin-right: 7px;
-  >button {
-    font-variant: small-caps;
-    color: $dark-text;
-    background-color: #fff;
-    border-color: $border;
-    border-style: solid solid none;
-    border-width: 2px 1px 0;
-    cursor: pointer;
-    padding: 1px 8px;
-    &:hover {
-      background-color: $border;
-    }
+  margin: 0 0 5px;
+  text-align: center;
+  @media (min-width: 800px) {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 7px;
   }
 }
 
 #flights-container {
+  @media (max-height: 770px) {
+    font-size: 1.9vh;
+  }
+  font-size: .9em;
   display: flex;
   flex-direction: column;
   overflow-x: scroll;
@@ -349,8 +376,10 @@ table {
   >div {
     display: inline-block;
     float: left;
-    border-right: 1px dashed $border;
     padding: 0 10px;
+    @media (min-width: 900px) {
+      border-right: 1px dashed $border;
+    }
     &:last-of-type {border-right: 0;}
   }
   h2 {margin-bottom: 16px;}
@@ -382,13 +411,10 @@ footer {
 @media (max-width: 850px) {
   header > img, .github {display: none;}
 }
-@media (max-width: 580px) {
-  #previous b {display: block;}
-}
 @media (max-width: 400px) {
   #next > div > div {margin: 0;}
   header {padding: 0 0 0 5px;}
-  body{font-size: 12px;}
+  body{font-size: 14px;}
   #previous>b{display: block}
 }
 @media (max-width: 1100px) {
