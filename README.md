@@ -8,21 +8,19 @@ The rockets and destinations images were designed by [@zlsa](https://github.com/
 
 ## Build
 #### Installation
-You'll need [Sass](http://sass-lang.com/) and [node.js](https://nodejs.org/) (with [jsdom](https://github.com/tmpvar/jsdom) and [jquery](https://jquery.com/)) installed.
+You'll need [Node.js](https://nodejs.org/) 8.
 
 ```bash
 $ git clone https://github.com/spacexlaunches/data.git data
 $ cp -r data/patches _site/patches
-$ gem install sass
 $ sudo apt-get install nodejs
-$ npm install jsdom jquery
+$ npm install
 ```
 
 #### Building the site
 The site is build in the ```_site``` folder
 ```bash
-$ node generate.js
-$ sass style.scss _site/style.css
+$ npm run build
 ```
 
 ## Contributing
