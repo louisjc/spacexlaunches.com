@@ -5,45 +5,42 @@ const htmlSource = fs.readFileSync('layout.html', 'utf8');
 
 // ==== Helper functions ====
 
-function getRocket(rocket) {
-  const options = rocket.split('-');
-  let res =
-    '<svg xmlns="http://www.w3.org/2000/svg" ' +
-    'xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 535">';
-  res += `<use xlink:href="img/rockets.svg#${options[0]}"></use>`;
-
-  if (options.length > 1) {
-    for (let i = 1; i < options.length; i++) {
-      res += `<use xlink:href="img/rockets.svg#${options[i]}"></use>`;
-    }
-  }
-  return `${res}</svg>`;
+function getOptions(id) {
+  // if (id >= 26) {
+  //   return ['fairing', 'legs'];
+  // }
+  return [];
 }
 
 function getDestination(destination, next) {
-  let res = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"';
-  if (!next) {
-    res += ' viewBox="30 300 139 67">';
-  } else {
-    res += ' width="2.6em" height="1.2em" viewBox="70 310 59 40">';
-  }
-
-  res += `<use xlink:href="img/destinations.svg#${destination}"></use>`;
-
-  return `${res}</svg>`;
+  return `<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="${next ? '70 310 59 40" width="2.6em" height="1.2em"' : '30 300 139 67"'}
+  >
+    <use xlink:href="img/destinations.svg#${destination}"></use>
+  </svg>`;
 }
 
-function getRocketName(rocket) {
-  const infos = rocket.split('-')[0].split('_');
-  const version = infos[1];
-  switch (infos[0]) {
-    case 'falcon1':
-      return 'Falcon 1';
-    case 'falcon9':
-      return `Falcon 9 v${version}`;
-    default:
-      return infos[0];
-  }
+function getSvgRocketId(rocket, payloads) {
+  const dragon = payloads.some(payload => payload.payload_type.toLowerCase().includes('dragon'));
+  const res = `${rocket.rocket_id}_${rocket.rocket_type}${(dragon && '_dragon') || ''}`;
+  return res;
+}
+
+function getRocket(ele) {
+  const id = getSvgRocketId(ele.rocket, ele.payloads);
+  const options = getOptions(ele.flight_number);
+  return `<svg xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 50 535"
+  >
+    <use xlink:href="img/rockets.svg#${id}"></use>
+    ${options.map(
+    option =>
+      `<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/rockets.svg#${option}"></use>`,
+  )}
+  </svg>`;
 }
 
 function getRocketClass(rocket) {
@@ -60,19 +57,19 @@ function getRocketClass(rocket) {
 function getLandingOutcome(launch, showMissionFail) {
   const res = { class: 'outcome' };
 
-  if (!launch.payloads[0].success && showMissionFail) {
+  if (!launch.launch_success && showMissionFail) {
     res.html = '<span>';
     res.html += '// Failure \\\\';
     res.class += ' fail';
     res.style = 'font-weight: 800;';
     res.html += '</span>';
-  } else if (launch.hasOwnProperty('landing')) {
+  } else if (launch.landing_type != null) {
     res.class += ' landing';
     res.html = '<span>';
-    if (launch.landing.destination == 'water') {
+    if (launch.landing_type === 'Ocean') {
       res.html += 'Water landing';
       res.class += ' neutral';
-    } else if (launch.landing.success) {
+    } else if (launch.land_success) {
       res.html += 'Landed';
       res.class += ' success';
     } else {
@@ -91,7 +88,7 @@ function getLandingOutcome(launch, showMissionFail) {
 
 function getMissionOutcome(launch) {
   const res = {};
-  if (launch.payloads[0].success) {
+  if (launch.launch_success) {
     res.class = 'success';
     res.html = 'Success';
   } else {
@@ -105,8 +102,8 @@ function getMissionOutcome(launch) {
 
 function printDate(stdate) {
   const date = new Date(stdate);
-  const day = (`0${date.getDate()}`).slice(-2);
-  const month = (`0${date.getMonth() + 1}`).slice(-2);
+  const day = `0${date.getDate()}`.slice(-2);
+  const month = `0${date.getMonth() + 1}`.slice(-2);
   const year = date.getFullYear();
   return `${day}/${month}/${year}`;
 }
@@ -124,53 +121,47 @@ function getsrcset(patchFileName) {
   return res.slice(0, -2);
 }
 
-jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], (err, window) => {
-  const $ = require('jquery')(window);
+jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], async (err, window) => {
+  const $ = require('jquery')(window); // eslint-disable-line
 
   // Previous launches
   const years = {};
-  const data = JSON.parse(fs.readFileSync('data/launches.json', 'utf8'));
+
+  const data = await $.getJSON('https://api.spacexdata.com/v1/launches');
   data.reverse();
   data.forEach((ele) => {
-    if (typeof years[getYear(ele.date)] !== 'undefined') {
-      years[getYear(ele.date)] += 1;
-    } else {
-      years[getYear(ele.date)] = 1;
-    }
-    let patchFileName = ele.payloads[0].name
+    years[ele.launch_year] = (years[ele.launch_year] || 0) + 1;
+    /* let patchFileName = ele.payloads[0].name
       .replace(/([^a-z0-9]+)/gi, '-')
       .replace(/-$/, '')
       .toLowerCase();
-    patchFileName += '.png';
+    patchFileName += '.png'; */
+    const patchFileName = ele.links.mission_patch;
     // List
     $('#flights').append(
-      $('<div/>', { class: `flight ${getRocketClass(ele.rocket, false)}` })
+      // $('<div/>', { class: `flight ${getRocketClass(ele.rocket, false)}` })
+      $('<div/>', { class: 'flight' })
         .append(
           $('<span/>', {
-            class: `destination ${ele.payloads[0].destination}`,
-            title: ele.payloads[0].destination,
-          }).html(
-            getDestination(
-              ele.payloads[0].success ? ele.payloads[0].destination : 'failure',
-              false,
-            ),
-          ),
+            class: `destination ${ele.payloads[0].orbit}`,
+            title: ele.payloads[0].orbit,
+          }).html(getDestination(ele.payloads[0].orbit, false)),
         )
         .append(
-          $('<div/>', { class: 'rocket', title: getRocketName(ele.rocket) }).html(
-            getRocket(ele.rocket),
-          ),
+          $('<div/>', {
+            class: 'rocket',
+            title: getSvgRocketId(ele.rocket, ele.payloads),
+          }).html(getRocket(ele)),
         )
         .append(
           $('<div/>', { class: 'caption' })
-            .append($('<span/>', { class: 'name', text: ele.payloads[0].name }))
+            .append($('<span/>', { class: 'name', text: ele.payloads[0].payload_id }))
             .append($('<div/>', getLandingOutcome(ele, true))),
         )
         .append(
           $('<img />', {
             class: 'patch',
-            src: `patches/${patchFileName}`,
-            srcset: getsrcset(patchFileName),
+            src: patchFileName,
             width: '5em',
             height: '5em',
             alt: `${ele.payloads[0].name} patch`,
@@ -182,17 +173,19 @@ jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], (err, window) => {
       .first()
       .append(
         $('<tr/>')
-          .append($('<td/>').html(printDate(ele.date)))
-          .append($('<td/>').html(getRocketName(ele.rocket)))
-          .append($('<td/>', { style: 'text-align: left' }).html(ele.payloads[0].name))
-          .append($('<td/>').html(ele.payloads[0].destination))
+          .append($('<td/>').html(printDate(ele.launch_date_utc)))
+          .append($('<td/>').html(getSvgRocketId(ele.rocket, ele.payloads)))
+          .append($('<td/>', { style: 'text-align: left' }).html(ele.payloads[0].payload_id))
+          .append($('<td/>').html(ele.payloads[0].orbit))
           .append($('<td/>', getMissionOutcome(ele)))
           .append($('<td/>', getLandingOutcome(ele, false))),
       );
   });
   $.each(years, (index, value) => {
     $('#years').prepend(
-      $('<span/>', { style: `width: ${(value * 5.6 / 0.8).toFixed(1)}em` }).html(index),
+      $('<span/>', {
+        style: `width: ${(value * 7).toFixed(1)}em`,
+      }).html(index),
     );
   });
   $('#launches').html(`(${data.length})`);
@@ -201,7 +194,7 @@ jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], (err, window) => {
   const scripts = window.document.getElementsByTagName('script');
   let i = scripts.length;
   while (i--) {
-    if (scripts[i].className == 'jsdom') {
+    if (scripts[i].className === 'jsdom') {
       scripts[i].parentNode.removeChild(scripts[i]);
     }
   }

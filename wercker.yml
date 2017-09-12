@@ -1,15 +1,6 @@
-box: louisjc/jekyll-s3-uglifyjs
 build:
+    box: node:8
     steps:
-        - script:
-            name: Get data
-            code: |
-              git clone https://github.com/spacexlaunches/launches-data.git data
-              cp -r data/patches _site/patches
-        - script:
-            name: Resize patches
-            code: |
-              ./resize-patches.sh
         - script:
             name: Install dependencies
             code: |
@@ -24,6 +15,7 @@ build:
             code: cp s3_website.yml "$WERCKER_OUTPUT_DIR"
 
 deploy:
+    box: louisjc/jekyll-s3-uglifyjs
     steps:
         - script:
             name: s3website
