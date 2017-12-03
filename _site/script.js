@@ -38,9 +38,16 @@ function init() {
     });
   });
 
-  $.getJSON('https://api.spacexdata.com/v1/launches/upcoming', function(data) {
+  $.getJSON('https://api.spacexdata.com/v2/launches/upcoming', function(data) {
     console.log(data);
-    data.forEach(printNext);
+    data
+      .filter(function(e) {
+        return e.launch_date_unix != null;
+      })
+      .sort(function(a, b) {
+        return a.launch_date_unix - b.launch_date_unix;
+      })
+      .forEach(printNext);
     if (data.length > 1) {
       document.getElementById('next').innerHTML +=
         '<span id="togglenext" onclick="toggleNext()">Show more ▼</span>';
@@ -78,11 +85,11 @@ function addRow(next) {
   var table = document.getElementById('next-table');
   table.innerHTML +=
     '<tr><td>' +
-    next.payloads[0].payload_id +
+    next.rocket.second_stage.payloads[0].payload_id +
     '</td><td> ' +
     next.launch_date_utc +
     '</td><td>' +
-    getDestination(next.payloads[0].orbit) +
+    getDestination(next.rocket.second_stage.payloads[0].orbit) +
     '</td><td>' +
     getRocketName(next.rocket) +
     '</td></tr>';
@@ -122,12 +129,14 @@ function printNext(next, id) {
       setDiv('<div class="date"><div>' + next.dateString + '</div><span>Date</span></div>');
     }
     var div = document.getElementById('next-' + id);
-    div.getElementsByClassName('next-destination')[0].title = next.payloads[0].payload_id;
+    div.getElementsByClassName('next-destination')[0].title =
+      next.rocket.second_stage.payloads[0].payload_id;
     div.getElementsByClassName('next-destination')[0].innerHTML = getDestination(
-      next.payloads[0].orbit,
+      next.rocket.second_stage.payloads[0].orbit,
     );
     div.getElementsByClassName('next-rocket')[0].innerHTML = getRocketName(next.rocket);
-    div.getElementsByClassName('next-mission')[0].innerHTML = next.payloads[0].payload_id;
+    div.getElementsByClassName('next-mission')[0].innerHTML =
+      next.rocket.second_stage.payloads[0].payload_id;
   } else {
     addRow(next);
   }

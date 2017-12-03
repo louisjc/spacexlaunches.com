@@ -29,7 +29,7 @@ function getSvgRocketId(rocket, payloads) {
 }
 
 function getRocket(ele) {
-  const id = getSvgRocketId(ele.rocket, ele.payloads);
+  const id = getSvgRocketId(ele.rocket, ele.rocket.second_stage.payloads);
   const options = getOptions(ele.flight_number);
   return `<svg xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -38,7 +38,9 @@ function getRocket(ele) {
     <use xlink:href="img/rockets.svg#${id}"></use>
     ${options.map(
     option =>
-      `<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/rockets.svg#${option}"></use>`,
+      `<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/rockets.svg#${
+        option
+      }"></use>`,
   )}
   </svg>`;
 }
@@ -127,11 +129,11 @@ jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], async (err, window)
   // Previous launches
   const years = {};
 
-  const data = await $.getJSON('https://api.spacexdata.com/v1/launches');
+  const data = await $.getJSON('https://api.spacexdata.com/v2/launches');
   data.reverse();
   data.forEach((ele) => {
     years[ele.launch_year] = (years[ele.launch_year] || 0) + 1;
-    /* let patchFileName = ele.payloads[0].name
+    /* let patchFileName = ele.rocket.second_stage.payloads[0].name
       .replace(/([^a-z0-9]+)/gi, '-')
       .replace(/-$/, '')
       .toLowerCase();
@@ -143,19 +145,21 @@ jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], async (err, window)
       $('<div/>', { class: 'flight' })
         .append(
           $('<span/>', {
-            class: `destination ${ele.payloads[0].orbit}`,
-            title: ele.payloads[0].orbit,
-          }).html(getDestination(ele.payloads[0].orbit, false)),
+            class: `destination ${ele.rocket.second_stage.payloads[0].orbit}`,
+            title: ele.rocket.second_stage.payloads[0].orbit,
+          }).html(getDestination(ele.rocket.second_stage.payloads[0].orbit, false)),
         )
         .append(
           $('<div/>', {
             class: 'rocket',
-            title: getSvgRocketId(ele.rocket, ele.payloads),
+            title: getSvgRocketId(ele.rocket, ele.rocket.second_stage.payloads),
           }).html(getRocket(ele)),
         )
         .append(
           $('<div/>', { class: 'caption' })
-            .append($('<span/>', { class: 'name', text: ele.payloads[0].payload_id }))
+            .append(
+              $('<span/>', { class: 'name', text: ele.rocket.second_stage.payloads[0].payload_id }),
+            )
             .append($('<div/>', getLandingOutcome(ele, true))),
         )
         .append(
@@ -164,7 +168,7 @@ jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], async (err, window)
             src: patchFileName,
             width: '5em',
             height: '5em',
-            alt: `${ele.payloads[0].name} patch`,
+            alt: `${ele.rocket.second_stage.payloads[0].name} patch`,
           }),
         ),
     );
@@ -174,9 +178,13 @@ jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], async (err, window)
       .append(
         $('<tr/>')
           .append($('<td/>').html(printDate(ele.launch_date_utc)))
-          .append($('<td/>').html(getSvgRocketId(ele.rocket, ele.payloads)))
-          .append($('<td/>', { style: 'text-align: left' }).html(ele.payloads[0].payload_id))
-          .append($('<td/>').html(ele.payloads[0].orbit))
+          .append($('<td/>').html(getSvgRocketId(ele.rocket, ele.rocket.second_stage.payloads)))
+          .append(
+            $('<td/>', { style: 'text-align: left' }).html(
+              ele.rocket.second_stage.payloads[0].payload_id,
+            ),
+          )
+          .append($('<td/>').html(ele.rocket.second_stage.payloads[0].orbit))
           .append($('<td/>', getMissionOutcome(ele)))
           .append($('<td/>', getLandingOutcome(ele, false))),
       );
