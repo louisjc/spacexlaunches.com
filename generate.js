@@ -5,6 +5,10 @@ const htmlSource = fs.readFileSync('layout.html', 'utf8');
 
 // ==== Helper functions ====
 
+function generateSrcset(org, sizes) {
+  return sizes.map(size => `${org}&w=${size}&h=${size} ${size}w`).join(',');
+}
+
 function getOptions(id) {
   // if (id >= 26) {
   //   return ['fairing', 'legs'];
@@ -115,14 +119,6 @@ function getYear(stdate) {
   return date.getFullYear();
 }
 
-function getsrcset(patchFileName) {
-  let res = '';
-  [100, 200].forEach((val) => {
-    res += `patches/${val}px/${patchFileName} ${val}w, `;
-  });
-  return res.slice(0, -2);
-}
-
 jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], async (err, window) => {
   const $ = require('jquery')(window); // eslint-disable-line
 
@@ -138,7 +134,10 @@ jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], async (err, window)
       .replace(/-$/, '')
       .toLowerCase();
     patchFileName += '.png'; */
-    const patchFileName = ele.links.mission_patch;
+    const patchFileName = `https://images.weserv.nl/?url=${encodeURIComponent(
+      ele.links.mission_patch.replace(/(^\w+:|^)\/\//, ''),
+    )}`;
+    console.log(patchFileName);
     // List
     $('#flights').append(
       // $('<div/>', { class: `flight ${getRocketClass(ele.rocket, false)}` })
@@ -165,7 +164,7 @@ jsdom.env(htmlSource, ['https://code.jquery.com/jquery.js'], async (err, window)
         .append(
           $('<img />', {
             class: 'patch',
-            src: patchFileName,
+            src: `${patchFileName}&w=200&h=200`,
             width: '5em',
             height: '5em',
             alt: `${ele.rocket.second_stage.payloads[0].name} patch`,
