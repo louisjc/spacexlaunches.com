@@ -7,8 +7,5 @@ gzip:
   - .svg
 
 max_age:
-  "patches/*": 5356800
   "img/*": 5356800
   "*": 86400
-
-ignore_on_server: next.json

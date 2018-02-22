@@ -1,7 +1,25 @@
 {
-  "extends": ["airbnb"],
-  "parserOptions": { "ecmaVersion": 8 },
-  "env": {
-    "node": true
-  }
+  "extends": ["airbnb", "plugin:flowtype/recommended"],
+  "rules": {
+    "camelcase": 0,
+    "import/no-unresolved": ["error"],
+    "react/prop-types": 0,
+    "semi": ["error", "never"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "jsx-quotes": ["error", "prefer-single"],
+    "react/jsx-filename-extension": 0,
+    "jsx-a11y/label-has-for": 0,
+    "jsx-a11y/anchor-is-valid": 0
+  },
+  "parser": "babel-eslint",
+  "plugins": ["react", "import", "flowtype"],
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": { "browser": true }
 }

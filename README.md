@@ -1,34 +1,33 @@
-# [spacexlaunches.com](https://spacexlaunches.com) ![Build Status](https://app.wercker.com/status/72fe331216257410751430e81003506b/s/master)
-*Previous SpaceX launches and  next mission.*
+<div align="center">
+
+[![SpacexLaunches.com Countdown](https://i.imgur.com/l5kD7jf.jpg)](https://spacexlaunches.com)
+
+# [SpacexLaunches.com](https://spacexlaunches.com)
+
+### Countdown for SpaceX next mission and visualization of previous launches 🚀
+
+</div>
 
 ## About
-This website is a simple view of the previous SpaceX launches and the next mission.
 
-The rockets and destinations images were designed by [@zlsa](https://github.com/zlsa/) (files ```_site/img/rockets.svg``` and ```_site/img/destinations.svg```)
-
-## Build
-#### Installation
-You'll need [Node.js](https://nodejs.org/) 8.
-
-```bash
-$ git clone https://github.com/spacexlaunches/data.git data
-$ cp -r data/patches _site/patches
-$ sudo apt-get install nodejs
-$ npm install
-```
-
-#### Building the site
-The site is build in the ```_site``` folder
-```bash
-$ npm run build
-```
+* Fan content - Not an official site
+* Based on [SpaceX-API](https://github.com/r-spacex/SpaceX-API)
+* The rockets and destinations images were designed by [@zlsa](https://github.com/zlsa/)
+* Build using React (via [create-react-app](https://github.com/facebook/create-react-app))
 
 ## Contributing
-Contributions are welcome!
+
+Contributions are welcome! 🎉
+
+#### Build locally
+
+```bash
+npm install
+npm start
+```
 
 ## License
-```_site/img/rockets.svg``` and ```_site/img/destinations.svg``` are copyrighted by [@zlsa](https://github.com/zlsa/)
 
-The SpaceX logo (```_site/img/spacex.png```) is copyrighted by Space Exploration Technologies Corp.
-
-Everything else is licensed under an MIT License. See ```LICENSE.md```
+* `public/img/rockets.svg` and `public/img/destinations.svg` are copyrighted by [@zlsa](https://github.com/zlsa/)
+* The SpaceX logo (`public/img/spacex.png`) is copyrighted by Space Exploration Technologies Corp.
+* Everything else is licensed under an MIT License. See `LICENSE.md`
