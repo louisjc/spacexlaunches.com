@@ -17,9 +17,6 @@ body {
 .neutral {
   color: #f0ad4e;
 }
-.grey {
-  color: $border;
-}
 
 .failure,
 .LEO,

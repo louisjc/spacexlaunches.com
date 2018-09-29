@@ -119,16 +119,18 @@ function Launch(props) {
 
 export default class extends React.Component {
   state = { data: null }
+
   componentDidMount() {
     axios.get('https://api.spacexdata.com/v2/launches').then(({ data }) => this.setState({ data }))
   }
+
   render() {
     return (
       <Container>
         <Header />
         <div className='flight-container'>
-          {this.state.data &&
-            this.state.data
+          {this.state.data
+            && this.state.data
               .reverse()
               .map(launch => <Launch key={launch.flight_number} {...launch} />)}
         </div>

@@ -27,12 +27,11 @@ const Img = styled.img`
 
 const scroll = (toTop) => {
   const h = toTop ? 0 : Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-  return () =>
-    window.scrollTo({
-      top: h,
-      left: 0,
-      behavior: 'smooth',
-    })
+  return () => window.scrollTo({
+    top: h,
+    left: 0,
+    behavior: 'smooth',
+  })
 }
 
 export default function ({ to }) {
@@ -40,7 +39,11 @@ export default function ({ to }) {
   return (
     <Container onClick={scroll(toTop)}>
       {toTop && <Img src={arrow} style={{ transform: 'rotate(180deg)' }} />}
-      <div>View {toTop ? 'upcoming' : 'past'} launches</div>
+      <div>
+        View
+        {toTop ? 'upcoming' : 'past'}
+        {' launches'}
+      </div>
       {!toTop && <Img src={arrow} />}
     </Container>
   )

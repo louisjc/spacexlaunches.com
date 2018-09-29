@@ -13,8 +13,9 @@ export default function (rocket) {
     <div className='rocket' title={id}>
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 535'>
         <use xlinkHref={`img/rockets.svg#${id}`} />
-        {options.map(option =>
-            `<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/rockets.svg#${option}"></use>`)}
+        {options.map(
+          option => `<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="img/rockets.svg#${option}"></use>`,
+        )}
       </svg>
     </div>
   )

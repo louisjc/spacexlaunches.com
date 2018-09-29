@@ -1,7 +1,9 @@
 import React from 'react'
 
 export default function ({ mission_patch, name }) {
-  const patchFileName = `https://images.weserv.nl/?url=${encodeURIComponent(mission_patch.replace(/(^\w+:|^)\/\//, ''))}`
+  const patchFileName = `https://images.weserv.nl/?url=${encodeURIComponent(
+    mission_patch.replace(/(^\w+:|^)\/\//, ''),
+  )}`
   return (
     <img
       className='patch'

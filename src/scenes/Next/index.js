@@ -34,11 +34,13 @@ const Source = styled.div`
 
 export default class extends React.Component {
   state = { data: null }
+
   componentDidMount() {
     axios
       .get('https://api.spacexdata.com/v2/launches/upcoming')
       .then(({ data }) => this.setState({ data: data[0] }))
   }
+
   render() {
     return (
       <Container>
@@ -46,7 +48,7 @@ export default class extends React.Component {
         <Main>{this.state.data && <Launch {...this.state.data} />}</Main>
         <ScrollButton />
         <Source>
-          Source:{' '}
+          {'Source: '}
           <a
             href='https://github.com/r-spacex/SpaceX-API'
             target='_blank'
