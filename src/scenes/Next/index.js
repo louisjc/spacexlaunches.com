@@ -50,9 +50,9 @@ export default class extends React.Component {
         <Source>
           {'Source: '}
           <a
-            href='https://github.com/r-spacex/SpaceX-API'
-            target='_blank'
-            rel='noopener noreferrer'
+            href="https://github.com/r-spacex/SpaceX-API"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             SpaceX-API
           </a>

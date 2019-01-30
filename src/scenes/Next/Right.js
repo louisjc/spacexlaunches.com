@@ -52,22 +52,22 @@ const Icons = styled.div`
   }
 `
 
-export default function (props) {
+export default function(props) {
   return (
     <Container>
       <div style={{ flex: 2 }}>
-        <div className='rocket'>{props.rocket.rocket_name}</div>
-        <div className='infos'>
+        <div className="rocket">{props.rocket.rocket_name}</div>
+        <div className="infos">
           <div>
-            <span className='name'>Flight Number</span>
+            <span className="name">Flight Number</span>
             <span>{props.flight_number}</span>
           </div>
           <div>
-            <span className='name'>Used core</span>
+            <span className="name">Used core</span>
             <span>{props.reuse.core ? '✓' : '✘'}</span>
           </div>
           <div>
-            <span className='name'>Destination</span>
+            <span className="name">Destination</span>
             <span>{props.rocket.second_stage.payloads['0'].orbit}</span>
           </div>
         </div>
@@ -76,18 +76,18 @@ export default function (props) {
         <a
           className={props.links.reddit_campaign ? '' : 'disabled'}
           href={props.links.reddit_campaign}
-          rel='noopener noreferrer'
-          target='_blank'
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <i className='fa fa-reddit-alien' aria-hidden='true' />
+          <i className="fa fa-reddit-alien" aria-hidden="true" />
         </a>
         <a
           className={props.links.video_link ? '' : 'disabled'}
           href={props.links.video_link}
-          rel='noopener noreferrer'
-          target='_blank'
+          rel="noopener noreferrer"
+          target="_blank"
         >
-          <i className='fa fa-youtube-play' aria-hidden='true' />
+          <i className="fa fa-youtube-play" aria-hidden="true" />
         </a>
       </Icons>
     </Container>

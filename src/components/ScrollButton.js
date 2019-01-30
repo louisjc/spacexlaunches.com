@@ -25,16 +25,19 @@ const Img = styled.img`
   height: 0.8em;
 `
 
-const scroll = (toTop) => {
-  const h = toTop ? 0 : Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
-  return () => window.scrollTo({
-    top: h,
-    left: 0,
-    behavior: 'smooth',
-  })
+const scroll = toTop => {
+  const h = toTop
+    ? 0
+    : Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
+  return () =>
+    window.scrollTo({
+      top: h,
+      left: 0,
+      behavior: 'smooth',
+    })
 }
 
-export default function ({ to }) {
+export default function({ to }) {
   const toTop = to === 'top'
   return (
     <Container onClick={scroll(toTop)}>

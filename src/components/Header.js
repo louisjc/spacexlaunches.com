@@ -26,7 +26,7 @@ const Header = styled.header`
   }
 `
 
-export default function () {
+export default function() {
   return (
     <Header>
       <h1>SpaceXLaunches.com</h1>

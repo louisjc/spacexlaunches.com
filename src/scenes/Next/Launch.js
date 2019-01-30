@@ -39,7 +39,7 @@ const Title = styled.div`
   text-align: right;
 `
 
-export default function (props) {
+export default function(props) {
   return (
     <Container>
       <Left>
