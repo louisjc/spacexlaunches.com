@@ -1,4 +1,5 @@
 s3_endpoint: eu-west-1
+s3_bucket: spacexlaunches.com
 
 gzip:
   - .html
@@ -7,5 +8,5 @@ gzip:
   - .svg
 
 max_age:
-  "img/*": 5356800
-  "*": 86400
+  'img/*': 5356800
+  '*': 86400
