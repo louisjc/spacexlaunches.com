@@ -36,7 +36,7 @@ export default class extends React.Component {
 
   componentDidMount() {
     axios
-      .get('https://api.spacexdata.com/v2/launches')
+      .get('https://api.spacexdata.com/v3/launches/past')
       .then(({ data }) => this.setState({ data }))
   }
 

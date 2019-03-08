@@ -64,7 +64,9 @@ export default function(props) {
           </div>
           <div>
             <span className="name">Used core</span>
-            <span>{props.reuse.core ? '✓' : '✘'}</span>
+            <span>
+              {props.rocket.first_stage.cores.map(c => (c.reused ? '✓' : '✘')).join('')}
+            </span>
           </div>
           <div>
             <span className="name">Destination</span>
