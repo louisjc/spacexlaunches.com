@@ -8,7 +8,7 @@ function LandingOutcome({ success, land_success, landing_type }) {
     let className
     let text
     if (landing_type === 'Ocean') {
-      text = 'Water landing'
+      text = 'Water land'
       className = 'neutral'
     } else if (land_success) {
       text = 'Landed'

@@ -4,7 +4,7 @@ import arrow from './arrow-bottom.svg'
 
 const Container = styled.div`
   text-align: center;
-  padding: 0.3em 0;
+  padding: 0 0 0.3em;
   cursor: pointer;
   margin: 0 auto;
   font-size: 1.5em;
@@ -41,13 +41,11 @@ export default function({ to }) {
   const toTop = to === 'top'
   return (
     <Container onClick={scroll(toTop)}>
-      {toTop && <Img src={arrow} style={{ transform: 'rotate(180deg)' }} />}
-      <div>
-        View
-        {toTop ? 'upcoming' : 'past'}
-        {' launches'}
-      </div>
-      {!toTop && <Img src={arrow} />}
+      {toTop && (
+        <Img src={arrow} alt="arrow bottom" style={{ transform: 'rotate(180deg)' }} />
+      )}
+      {!toTop && <div>View past launches</div>}
+      {!toTop && <Img src={arrow} alt="arrow top" />}
     </Container>
   )
 }

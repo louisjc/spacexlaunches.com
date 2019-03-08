@@ -5,14 +5,6 @@ export default function({ mission_patch, name }) {
     mission_patch.replace(/(^\w+:|^)\/\//, '')
   )}`
   return (
-    <img
-      className="patch"
-      alt={`${name} patch`}
-      src={`${patchFileName}&w=200&h=200`}
-      style={{
-        width: '5em',
-        height: '5em',
-      }}
-    />
+    <img className="patch" alt={`${name} patch`} src={`${patchFileName}&w=200&h=200`} />
   )
 }
