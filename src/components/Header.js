@@ -26,11 +26,17 @@ const Header = styled.header`
   }
 `
 
-export default function() {
+export default function({ top }) {
   return (
     <Header>
       <h1>SpaceXLaunches.com</h1>
-      <span>Fan content - Not an official site</span>
+      {top ? (
+        <span>Fan content - Not an official site</span>
+      ) : (
+        <span>
+          illustrated by <a href="https://zlsa.github.io/">ZLSA Design</a>
+        </span>
+      )}
     </Header>
   )
 }

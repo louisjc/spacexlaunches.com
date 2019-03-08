@@ -44,7 +44,7 @@ export default class extends React.Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header top />
         <Main>{this.state.data && <Launch {...this.state.data} />}</Main>
         <ScrollButton />
         <Source>
