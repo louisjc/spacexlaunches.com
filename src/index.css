@@ -20,8 +20,9 @@ body {
 
 .failure,
 .LEO,
-.Polar,
+.PO,
 .ISS,
+.SSO,
 .MEO {
   align-items: flex-end;
 }
@@ -29,6 +30,6 @@ body {
 .GEO {
   align-items: center;
 }
-.SUN-EARTH-L1 {
+.ES-L1 {
   align-items: flex-start;
 }

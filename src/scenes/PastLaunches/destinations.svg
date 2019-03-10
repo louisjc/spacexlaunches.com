@@ -7,7 +7,6 @@
         <stop offset="1" stop-color="gray" stop-opacity="0"/>
       </linearGradient>
       <radialGradient xlink:href="#linearGradient25202" id="radialGradient25208-2" cx="1201.38" cy="169.97" fx="1201.38" fy="169.97" r="53" gradientTransform="matrix(.63977 0 0 .47532 432.77 62.047)" gradientUnits="userSpaceOnUse"/>
-    </g>
     <g>
       <circle id="earth" cx="480" cy="140.36" r="12" fill="#2b75cc"/>
       <circle id="earth2" cx="1152.01" cy="132.37" r="12" fill="#2b75cc"/>
@@ -17,43 +16,36 @@
       </g>
       <g id="LEO" transform="translate(-381 192)" >
         <use xlink:href="#earth"/>
-        <path d="M496 140.36a16 4 0 0 1-8 3.47 16 4 0 0 1-16 0 16 4 0 0 1-8-3.47" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#fff"/>
+        <path d="M496 140.36a16 4 0 0 1-8 3.47 16 4 0 0 1-16 0 16 4 0 0 1-8-3.47" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#011b2d"/>
         <path d="M493.86 138.36a16 4 0 0 1-3.58 5.07 16 4 0 0 1-20.56 0 16 4 0 0 1-3.58-5.07" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
-      </g>
-      <g id="GTOp" transform="translate(-613 319)">
-        <g transform="translate(-440.012 -118.965)">
-          <ellipse cx="1152.01" cy="132.37" rx="36.01" ry="8.01" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
-          <use xlink:href="#earth2"/>
-          <path d="M1188.02 132.37a36 8 0 0 1-26.7 7.74 36 8 0 0 1-40.5-3.7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#fff"/>
-          <path d="M1183.2 128.37a36 8 0 0 1-8.04 10.14 36 8 0 0 1-46.3 0 36 8 0 0 1-8.04-10.1" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
-          <circle r="4" cy="139.37" cx="1136" fill="gray"/>
-        </g>
-        <g transform="translate(-440 -118)" fill="#a0a0a0">
-          <rect ry="0" rx="0" y="108.37" x="1146" height="8" width="2"/>
-          <rect transform="rotate(90)" width="2" height="8" x="111.37" y="-1151" rx="0" ry="0"/>
-          <rect width="2" height="8" x="1156" y="108.37" rx="0" ry="0"/>
-          <rect ry="0" rx="0" y="-1161" x="111.37" height="8" width="2" transform="rotate(90)"/>
-        </g>
       </g>
       <g id="GTO" transform="translate(-613 319)">
         <g transform="translate(-440.012 -118.965)">
           <ellipse cx="1152.01" cy="132.37" rx="36.01" ry="8.01" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
           <use xlink:href="#earth2"/>
-          <path d="M1188.02 132.37a36 8 0 0 1-26.7 7.74 36 8 0 0 1-40.5-3.7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#fff"/>
+          <path d="M1188.02 132.37a36 8 0 0 1-26.7 7.74 36 8 0 0 1-40.5-3.7" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#011e37"/>
           <path d="M1183.2 128.37a36 8 0 0 1-8.04 10.14 36 8 0 0 1-46.3 0 36 8 0 0 1-8.04-10.1" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
           <circle r="4" cy="139.37" cx="1136" fill="gray"/>
         </g>
       </g>
-      <g id="Polar" transform="translate(-223 319)">
+      <g id="PO" transform="translate(-183 319)">
+        <g transform="rotate(-90 318.268 179.835)">
+          <path d="M496 140.36a16 4 0 0 1-8-3.46 16 4 0 0 1-16 0 16 4 0 0 1-8 3.46" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
+          <use xlink:href="#earth"/>
+          <path d="M496 140.36a16 4 0 0 1-8 3.47 16 4 0 0 1-16 0 16 4 0 0 1-8-3.47" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#011e37"/>
+          <path d="M493.86 138.36a16 4 0 0 1-3.58 5.07 16 4 0 0 1-20.56 0 16 4 0 0 1-3.58-5.07" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
+        </g>
+      </g>
+      <g id="SSO" transform="translate(-223 319)">
         <g transform="rotate(-75 318.268 179.835)">
           <path d="M496 140.36a16 4 0 0 1-8-3.46 16 4 0 0 1-16 0 16 4 0 0 1-8 3.46" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
           <use xlink:href="#earth"/>
-          <path d="M496 140.36a16 4 0 0 1-8 3.47 16 4 0 0 1-16 0 16 4 0 0 1-8-3.47" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#fff"/>
+          <path d="M496 140.36a16 4 0 0 1-8 3.47 16 4 0 0 1-16 0 16 4 0 0 1-8-3.47" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke="#011b2d"/>
           <path d="M493.86 138.36a16 4 0 0 1-3.58 5.07 16 4 0 0 1-20.56 0 16 4 0 0 1-3.58-5.07" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="gray"/>
         </g>
       </g>
     </g>
-    <g id="SUN-EARTH-L1" transform="translate(-613 368)">
+    <g id="ES-L1" transform="translate(-613 368)">
       <g transform="matrix(-1 0 0 1 1864.012 -168.02)">
         <use xlink:href="#earth2"/>
         <path id="path25198-9" d="M1152 124.36a52 8 0 0 1 50.24 5.94 52 8 0 0 1-24.23 9 52 8 0 0 1-62.72-1.27 52 8 0 0 1-8.26-9.66" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" stroke="url(#radialGradient25208-2)"/>
@@ -64,9 +56,9 @@
     <g id="MEO" transform="translate(15 373)">
       <g transform="translate(-396 -181)">
         <path transform="scale(1 -1)" d="m 500.012113571167,-140.3621673583984 a 20.01211357116699,5.990712165832521 0 0 1 -13.1675676193069,5.6294280154851 20.01211357116699,5.990712165832521 0 0 1 -22.1747143481185,-1.7786724620896 20.01211357116699,5.990712165832521 0 0 1 -2.0008303397915,-6.8461116363118" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        <circle cx="480" cy="140.36" r="13" fill="#fff"/>
+        <circle cx="480" cy="140.36" r="13" fill="#011e37"/>
         <use xlink:href="#earth"/>
-        <path d="m 500.012113571167,140.3621673583984 a 20.01211357116699,6.009287834167481 0 0 1 -17.4000085884474,5.9578775437015 20.01211357116699,6.009287834167481 0 0 1 -21.9423223197397,-4.402559404716" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="m 500.012113571167,140.3621673583984 a 20.01211357116699,6.009287834167481 0 0 1 -17.4000085884474,5.9578775437015 20.01211357116699,6.009287834167481 0 0 1 -21.9423223197397,-4.402559404716" fill="none" stroke="#011e37" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="m 497.3309987360499,137.3575234413147 a 20.01211357116699,6.009287834167481 0 0 1 -4.4674600888639,7.6080254695502 20.01211357116699,6.009287834167481 0 0 1 -25.727077294372,0 20.01211357116699,6.009287834167481 0 0 1 -4.4674600888639,-7.6080254695502" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
     </g>

@@ -63,7 +63,8 @@ const Flight = styled.div`
   .patch {
     align-self: center;
     margin-bottom: 10px;
-    width: 90%;
+    width: 70px;
+    height: 70px;
   }
 
   .rocket {
@@ -85,11 +86,12 @@ export default function Launch(props) {
     <Flight style={props.style}>
       <Destination orbit={props.rocket.second_stage.payloads[0].orbit} />
       <Rocket {...props.rocket} />
-      <Caption success={props.launch_success} rocket={props.rocket} />
-      <Patch
-        name={props.rocket.second_stage.payloads[0].name}
-        mission_patch={props.links.mission_patch}
+      <Caption
+        success={props.launch_success}
+        rocket={props.rocket}
+        name={props.mission_name}
       />
+      <Patch name={props.mission_name} mission_patch={props.links.mission_patch} />
     </Flight>
   )
 }

@@ -10,10 +10,10 @@
 
 ## About
 
-* Fan content - Not an official site
-* Based on [SpaceX-API](https://github.com/r-spacex/SpaceX-API)
-* The rockets and destinations images were designed by [@zlsa](https://github.com/zlsa/)
-* Build using React (via [create-react-app](https://github.com/facebook/create-react-app))
+- Fan content - Not an official site
+- Based on [SpaceX-API](https://github.com/r-spacex/SpaceX-API)
+- The rockets and destinations images were designed by [@zlsa](https://github.com/zlsa/)
+- Build using React (via [create-react-app](https://github.com/facebook/create-react-app))
 
 ## Contributing
 
@@ -22,12 +22,12 @@ Contributions are welcome! 🎉
 #### Build locally
 
 ```bash
-npm install
-npm start
+yarn install
+yarn start
 ```
 
 ## License
 
-* `public/img/rockets.svg` and `public/img/destinations.svg` are copyrighted by [@zlsa](https://github.com/zlsa/)
-* The SpaceX logo (`public/img/spacex.png`) is copyrighted by Space Exploration Technologies Corp.
-* Everything else is licensed under an MIT License. See `LICENSE.md`
+- `rockets.svg` and `destinations.svg` are copyrighted by [@zlsa](https://github.com/zlsa/)
+- The SpaceX logo (`public/favicon.ico`) is copyrighted by Space Exploration Technologies Corp.
+- Everything else is licensed under an MIT License. See `LICENSE.md`

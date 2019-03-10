@@ -1,5 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="50" height="538" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 538">
   <defs>
+    <g id="crew-dragon" transform="translate(-3 -339)">
+      <defs>
+        <linearGradient id="b">
+          <stop offset="0" stop-color="#f80"/>
+          <stop offset="1" stop-color="#f80" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="a">
+          <stop offset="0" stop-color="#f80"/>
+          <stop offset="1" stop-color="#f80" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <g transform="translate(-64 -849.362)">
+        <path d="M114 916.362c0 4 28 4 28 0 0 0 0-12-6-24-4-8-12-8-16 0-6 12-6 24-6 24z" fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2"/>
+        <path d="M120 892.362c4 1 12 1 16 0" fill="none" stroke="#404040"/>
+        <path d="M115 905.362l-1 11 4 3h19l5-3-1-11h-5s-1.285 4.567-1.79 10h-12.42c-.505-5.433-1.79-10-1.79-10z" fill="#404040" fill-rule="evenodd"/>
+        <ellipse cx="128" cy="901.362" rx="1.5" ry="3" fill="#41413f"/>
+        <ellipse ry="3" rx="1.5" cy="901.362" cx="123.5" fill="#41413f"/>
+        <path d="M126 896.362c-.554 0-1 .446-1 1v1c0-.554.446-1 1-1h4c.554 0 1 .446 1 1v-1c0-.554-.446-1-1-1h-4z" fill="#c0c0be"/>
+        <ellipse cx="132.5" cy="901.362" rx="1.5" ry="3" fill="#41413f"/>
+        <path d="M126 907.362c-.554 0-1-.446-1-1v-1c0 .554.446 1 1 1h4c.554 0 1-.446 1-1v1c0 .554-.446 1-1 1h-4z" fill="#c0c0be"/>
+      </g>
+      <path d="M70 68h7v3l3 6v19H48V77l3-5.948V68h16" fill="#fff" stroke="#404040" stroke-width="2" stroke-linejoin="round"/>
+      <path fill="#404040" d="M51 71h1v25h-1zM76 71h1v25h-1zM63 68h2v28h-2zM67 63c-.554 0-1 .446-1 1v5c0 .554.446 3 1 3v-8h2v8c.554 0 1-2.446 1-3v-5c0-.554-.446-1-1-1z"/>
+      <path fill="#fff" d="M67 65h2v7h-2z"/>
+      <path fill="#404040" d="M68 92h4v2h-4zM57 92h4v2h-4z"/>
+    </g>
     <g id="dragon" transform="translate(-3 -339)">
       <g transform="translate(-64 -175)">
         <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M112 957.36c-4 0-6.4 1.9-8 8l-5 19c-1.98 6 5 6 13 6s14.66 0 13-6l-5-19c-1.6-6.1-4-8-8-8z" stroke-linejoin="round"/>
@@ -92,27 +118,18 @@
       <path fill="#404040" fill-rule="evenodd" d="M35 514.36v3l2 2s-1 2-1 5h9.15c-.1.6-.15 1.27-.15 2h6c0-.73-.06-1.4-.15-2H60c0-3-1-5-1-5l2-2v-3H35z"/>
       <path fill="none" stroke="#404040" d="M36 234.86h24"/>
       <rect width="8" height="4" x="44" y="214.36" fill="#c65252" stroke="#c65252" stroke-width="2" rx="0" ry="0" stroke-linecap="round" stroke-linejoin="round"/>
-      <rect width="2" height="2" x="143" y="232" fill="#404040" ry="0" rx="0"/>
     </g>
     <g id="falcon9_FT-SecondStage" transform="translate(-3 -339)">
       <rect width="26" height="60" x="35" y="132.36" fill="#fff" stroke="#404040" stroke-width="2" stroke-dashoffset="10" ry="0" rx="0" stroke-linecap="round"/>
       <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M38 192.36s2 4 10 4 10-4 10-4zm0 36c1.43-20 9-28 9-28h2s7.57 8 9 28H48z"/>
       <path fill="#404040" fill-rule="evenodd" d="M46 200.36v-5h4v5z"/>
     </g>
-    <g id="falcon9_FT" transform="translate(-165 330)">
-      <use xlink:href="#payload" transform="translate(80 22)"/>
-      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
-      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
-      <use xlink:href="#legs" transform="translate(165 -330)"/>
-      <use xlink:href="#farings" transform="translate(165 -332)"/>
-    </g>
-    <g id="falcon9_FT_dragon" transform="translate(-165 330)">
-      <use xlink:href="#dragon" transform="translate(144 -689)"/>
-      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
-      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
-      <use xlink:href="#legs" transform="translate(165 -330)"/>
-      <use xlink:href="#farings" transform="translate(165 -332)"/>
-    </g>
+    <g id='falconheavy_booster' transform="translate(46 -16.36)">
+      <path fill="#fff" stroke="#404040" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2" d="M35 228.36c0-12 5-24 13-24s13 12 13 24v289l-2 2H37l-2-2z"/>
+      <path fill="#404040" fill-rule="evenodd" d="M37 519.36s-1 2-1 5h9.15c-.09.6-.15 1.27-.15 2h6c0-.73-.06-1.4-.15-2H60c0-3-1-5-1-5z"/>
+      <path fill="none" stroke="#404040" d="M36 236.86h24"/>
+      <rect width="26" height="1" x="35" y="515.36" fill="#404040" rx="0" ry="0"/>
+    </g> 
     <!-- Rockets -->
     <g id="falcon1" transform="translate(-43 241)">
       <path fill="#fff" stroke="#404040" stroke-width="2" d="M63 200.36l-1 2v8s2 2 5 2 5-2 5-2v-8l-1-2h-8z" stroke-linecap="round" stroke-linejoin="round"/>
@@ -138,7 +155,7 @@
       <use xlink:href="#falcon9_v1.0-FirstStage" transform="translate(-37 330)"/>
       <use xlink:href="#dragon" transform="translate(-21 -257)"/>
     </g>
-    <g id="falcon9_v1.1" transform="translate(-165 330)">
+    <g id="falcon9_v1.1_sat" transform="translate(-165 330)">
       <use xlink:href="#payload" transform="translate(80 42)"/>
       <use xlink:href="#SecondStage" transform="translate(144 20)"/>
       <use xlink:href="#falcon9_v1.1-FirstStage" transform="translate(144 20)"/>
@@ -147,6 +164,43 @@
       <use xlink:href="#dragon" transform="translate(144 -669)"/>
       <use xlink:href="#SecondStage" transform="translate(144 20)"/>
       <use xlink:href="#falcon9_v1.1-FirstStage" transform="translate(144 20)"/>
+    </g>
+    <g id="falcon9_FT_sat" transform="translate(-165 330)">
+      <use xlink:href="#payload" transform="translate(80 22)"/>
+      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
+      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
+    </g>
+    <g id="falconheavy_FT_sat" transform="translate(-165 330)">
+      <use xlink:href="#payload" transform="translate(80 22)"/>
+      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
+      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
+
+      <g transform="translate(65 -303)">
+        <use xlink:href="#falconheavy_booster"/>
+        <path fill="#404040" d="M30 512.36h4v4h-4zM30 236.36h4v4h-4z" transform="translate(76 -16.36)"/>
+      </g>
+      <g transform="translate(125 -303)">
+        <use xlink:href="#falconheavy_booster"/>
+        <path fill="#404040" d="M30 512.36h4v4h-4zM30 236.36h4v4h-4z" transform="translate(46 -16.36)"/>
+      </g>
+      <g transform="translate(-30 0)">
+        <use xlink:href="#legs" transform="translate(165 -330)"/>
+        <use xlink:href="#farings" transform="translate(165 -330)"/>
+      </g>
+      <g transform="translate(30 0)">
+        <use xlink:href="#legs" transform="translate(165 -330)"/>
+        <use xlink:href="#farings" transform="translate(165 -330)"/>
+      </g>
+    </g>
+    <g id="falcon9_FT_dragon" transform="translate(-165 330)">
+      <use xlink:href="#dragon" transform="translate(144 -689)"/>
+      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
+      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
+    </g>
+    <g id="falcon9_FT_crew-dragon" transform="translate(-165 330)">
+      <use xlink:href="#crew-dragon" transform="translate(128 50)"/>
+      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
+      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
     </g>
   </defs>
 </svg>
