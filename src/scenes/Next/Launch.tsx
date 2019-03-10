@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { FunctionComponent } from 'react'
 import styled from 'styled-components/macro'
 import Countdown from '../../components/Countdown'
 import Right from './Right'
+import { LaunchType } from '../../types'
 
 const Mission = styled.div`
   font-size: 4em;
@@ -39,15 +40,15 @@ const Title = styled.div`
   text-align: right;
 `
 
-export default function(props) {
-  return (
-    <Container>
-      <Left>
-        <Title>Primary Payload</Title>
-        <Mission>{props.rocket.second_stage.payloads['0'].payload_id}</Mission>
-        <Countdown date={props.launch_date_unix} />
-      </Left>
-      <Right {...props} />
-    </Container>
-  )
-}
+const Launch: FunctionComponent<{ data: LaunchType }> = ({ data }) => (
+  <Container>
+    <Left>
+      <Title>Primary Payload</Title>
+      <Mission>{data.rocket.second_stage.payloads[0].payload_id}</Mission>
+      <Countdown date={data.launch_date_unix} />
+    </Left>
+    <Right data={data} />
+  </Container>
+)
+
+export default Launch

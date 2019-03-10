@@ -8,5 +8,10 @@ gzip:
   - .svg
 
 max_age:
-  'img/*': 5356800
-  '*': 86400
+  'img/*': 86400
+  'static/*': 31536000
+
+exclude_from_upload:
+  - .DS_Store
+  - .css.map
+  - .js.map

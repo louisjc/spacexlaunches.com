@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { FunctionComponent, CSSProperties } from 'react'
 import styled from 'styled-components/macro'
 import Destination from './Destination'
 import Rocket from './Rocket'
 import Caption from './Caption'
 import Patch from './Patch'
+import { LaunchType } from '../../types'
 
 const Flight = styled.div`
   font-size: 14px;
@@ -20,6 +21,7 @@ const Flight = styled.div`
     display: flex;
     min-height: 5em;
 
+    overflow: visible;
     svg {
       width: 5.6em;
       height: 2.8em;
@@ -63,8 +65,8 @@ const Flight = styled.div`
   .patch {
     align-self: center;
     margin-bottom: 10px;
-    width: 70px;
-    height: 70px;
+    width: 75px;
+    height: 75px;
   }
 
   .rocket {
@@ -75,23 +77,27 @@ const Flight = styled.div`
     justify-content: center;
     display: flex;
     svg {
+      overflow: visible;
       height: 100%;
       width: 100%;
     }
   }
 `
 
-export default function Launch(props) {
-  return (
-    <Flight style={props.style}>
-      <Destination orbit={props.rocket.second_stage.payloads[0].orbit} />
-      <Rocket {...props.rocket} />
-      <Caption
-        success={props.launch_success}
-        rocket={props.rocket}
-        name={props.mission_name}
-      />
-      <Patch name={props.mission_name} mission_patch={props.links.mission_patch} />
-    </Flight>
-  )
-}
+const Launch: FunctionComponent<{ style: CSSProperties; launch: LaunchType }> = ({
+  style,
+  launch,
+}) => (
+  <Flight style={style}>
+    <Destination orbit={launch.rocket.second_stage.payloads[0].orbit} />
+    <Rocket {...launch.rocket} />
+    <Caption
+      success={launch.launch_success}
+      rocket={launch.rocket}
+      name={launch.mission_name}
+    />
+    <Patch name={launch.mission_name} mission_patch={launch.links.mission_patch} />
+  </Flight>
+)
+
+export default Launch

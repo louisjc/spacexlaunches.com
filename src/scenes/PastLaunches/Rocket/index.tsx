@@ -1,9 +1,8 @@
 import React, { FunctionComponent } from 'react'
-import { RocketType } from './types'
+import { RocketType } from '../../../types'
 import RocketsSVG from './rockets.svg'
 
 function getPayloadId(rocket: RocketType) {
-  console.log(rocket.second_stage.payloads[0].payload_type)
   switch (rocket.second_stage.payloads[0].payload_type) {
     case 'Dragon Boilerplate':
       return 'dragonNT'
@@ -22,10 +21,6 @@ function getPayloadId(rocket: RocketType) {
 function getSvgRocketId(rocket: RocketType) {
   if (rocket.rocket_id === 'falcon1') return rocket.rocket_id
 
-  rocket.second_stage.payloads.forEach(e => console.log(e.payload_type))
-  const dragon = rocket.second_stage.payloads.some(
-    ({ payload_type }) => payload_type === 'Dragon 1.1'
-  )
   const res = `${rocket.rocket_id}_${rocket.rocket_type}_${getPayloadId(rocket)}`
   return res
 }

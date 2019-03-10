@@ -4,6 +4,7 @@ import axios from 'axios'
 import ScrollButton from '../../components/ScrollButton'
 import Header from '../../components/Header'
 import Launch from './Launch'
+import { LaunchType } from '../../types'
 
 const Container = styled.div`
   height: 100vh;
@@ -37,21 +38,23 @@ const Main = styled.div`
   justify-content: center;
 `
 
-export default class extends React.Component {
+export default class extends React.Component<{}, { data: LaunchType | null }> {
   state = { data: null }
 
   componentDidMount() {
     axios
       .get('https://api.spacexdata.com/v3/launches/upcoming')
-      .then(({ data }) => this.setState({ data: data[0] }))
+      .then(({ data }) => this.setState({ data: data[0] as LaunchType }))
   }
 
   render() {
+    const { data } = this.state
+
     return (
       <Container>
         <Header top />
-        <Main>{this.state.data && <Launch {...this.state.data} />}</Main>
-        <ScrollButton />
+        <Main>{data && <Launch data={data} />}</Main>
+        <ScrollButton to="bottom" />
         <div className="right">
           {'Source: '}
           <a

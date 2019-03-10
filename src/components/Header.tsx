@@ -27,7 +27,7 @@ const Container = styled.header<{ bg: boolean }>`
   }
 `
 
-const Header: FunctionComponent<{ top: boolean }> = props => (
+const Header: FunctionComponent<{ top?: boolean }> = props => (
   <Container bg={!props.top}>
     <h1>SpaceXLaunches.com</h1>
     {props.top ? (

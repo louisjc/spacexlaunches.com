@@ -4,8 +4,10 @@ import axios from 'axios'
 import ScrollButton from '../../components/ScrollButton'
 import Header from '../../components/Header'
 import Launch from './Launch'
-import { SizeMe } from 'react-sizeme'
 import VirtualList from 'react-tiny-virtual-list'
+import { LaunchType } from '../../types'
+import { DIRECTION } from 'react-tiny-virtual-list/types/constants'
+const { SizeMe }: any = require('react-sizeme')
 
 const Container = styled.div`
   display: flex;
@@ -32,34 +34,35 @@ const Container = styled.div`
   }
 `
 
-export default class extends React.Component {
-  state = { data: null }
+export default class extends React.Component<{}, { data: LaunchType[] | null }> {
+  state = { data: null as LaunchType[] | null }
 
   componentDidMount() {
     axios
       .get('https://api.spacexdata.com/v3/launches/past')
-      .then(({ data }) => this.setState({ data }))
+      .then(({ data }) => this.setState({ data: data as LaunchType[] }))
   }
 
   render() {
-    let list = this.state.data && this.state.data.reverse()
+    const data = this.state.data
+    let list = data && data.reverse()
     if (!list) return null
     return (
       <Container>
         <Header />
         <SizeMe monitorHeight>
-          {({ size }) => {
+          {({ size }: { size: { width: number; height: number } }) => {
             if (size.width == null || size.height == null) return null
             return (
               <div className="flight-container">
                 <VirtualList
-                  scrollDirection="horizontal"
+                  scrollDirection={'horizontal' as DIRECTION}
                   width={size.width}
                   height={size.height}
-                  itemCount={list.length}
-                  itemSize={78}
+                  itemCount={list!.length}
+                  itemSize={80}
                   renderItem={({ index, style }) => (
-                    <Launch key={index} style={style} {...list[index]} />
+                    <Launch key={index} style={style} launch={list![index]} />
                   )}
                 />
               </div>

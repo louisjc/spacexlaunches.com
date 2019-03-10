@@ -25,9 +25,9 @@ const Container = styled.div`
     }
   }
 `
-export default class extends React.Component {
+export default class extends React.Component<{ date: number }, { now: number }> {
   state = { now: Math.floor(Date.now() / 1000) }
-
+  interval = 0
   componentDidMount() {
     this.interval = setInterval(this.tick, 1000)
   }
