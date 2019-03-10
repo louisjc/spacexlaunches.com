@@ -1,6 +1,8 @@
 import React from 'react'
 
 function getSvgRocketId(rocket, payloads) {
+  if (rocket.rocket_id === 'falcon1') return rocket.rocket_id
+
   const dragon = payloads.some(payload =>
     payload.payload_type.toLowerCase().includes('dragon')
   )
