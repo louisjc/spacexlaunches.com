@@ -39,11 +39,18 @@ function getOptions(rocket: RocketType): string[] {
   return options
 }
 
-const Rocket: FunctionComponent<RocketType> = rocket => {
+const Rocket: FunctionComponent<{ rocket: RocketType; success: boolean | null }> = ({
+  rocket,
+  success,
+}) => {
   const id = getSvgRocketId(rocket)
   const options = getOptions(rocket)
   return (
-    <div className="rocket" title={id}>
+    <div
+      className="rocket"
+      title={id}
+      style={success ? {} : { filter: 'grayscale(1) opacity(0.5)' }}
+    >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 535">
         <use xlinkHref={`${RocketsSVG}#${id}`} />
         {options.map((option, i) => (
