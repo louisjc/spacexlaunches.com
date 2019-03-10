@@ -16,7 +16,6 @@ const Container = styled.div`
   .right {
     color: #fff;
     position: fixed;
-    font-weight: 100;
     bottom: 5px;
     @media (max-width: 600px) {
       display: none;

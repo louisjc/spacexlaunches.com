@@ -1,6 +1,8 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components/macro'
 import { LaunchType } from '../../types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRedditAlien, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 const Container = styled.div`
   display: flex;
@@ -81,7 +83,7 @@ const Right: FunctionComponent<{ data: LaunchType }> = ({ data }) => (
         rel="noopener noreferrer"
         target="_blank"
       >
-        <i className="fa fa-reddit-alien" aria-hidden="true" />
+        <FontAwesomeIcon icon={faRedditAlien} />
       </a>
       <a
         className={data.links.video_link ? '' : 'disabled'}
@@ -89,7 +91,7 @@ const Right: FunctionComponent<{ data: LaunchType }> = ({ data }) => (
         rel="noopener noreferrer"
         target="_blank"
       >
-        <i className="fa fa-youtube-play" aria-hidden="true" />
+        <FontAwesomeIcon icon={faYoutube} />
       </a>
     </Icons>
   </Container>

@@ -11,7 +11,7 @@ const Container = styled.header<{ bg: boolean }>`
   h1 {
     flex: 1;
     line-height: 1;
-    font-weight: 300;
+    font-weight: 400;
     margin: 0;
     font-size: 1.5em;
 
@@ -34,7 +34,10 @@ const Header: FunctionComponent<{ top?: boolean }> = props => (
       <span>Fan content - Not an official site</span>
     ) : (
       <span>
-        illustrated by <a href="https://zlsa.github.io/">ZLSA Design</a>
+        illustrated by{' '}
+        <a href="https://zlsa.github.io/" target="_blank" rel="noopener noreferrer">
+          ZLSA Design
+        </a>
       </span>
     )}
   </Container>

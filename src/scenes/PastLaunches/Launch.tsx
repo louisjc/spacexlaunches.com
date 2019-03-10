@@ -62,13 +62,6 @@ const Flight = styled.div`
     min-width: 4.4em;
   }
 
-  .patch {
-    align-self: center;
-    margin-bottom: 10px;
-    width: 75px;
-    height: 75px;
-  }
-
   .rocket {
     flex: 1;
     padding-top: 5px;
@@ -90,7 +83,7 @@ const Launch: FunctionComponent<{ style: CSSProperties; launch: LaunchType }> = 
 }) => (
   <Flight style={style}>
     <Destination orbit={launch.rocket.second_stage.payloads[0].orbit} />
-    <Rocket {...launch.rocket} />
+    <Rocket rocket={launch.rocket} success={launch.launch_success} />
     <Caption
       success={launch.launch_success}
       rocket={launch.rocket}
