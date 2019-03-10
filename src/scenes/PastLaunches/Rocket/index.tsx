@@ -35,6 +35,9 @@ function getOptions(rocket: RocketType): string[] {
   if (rocket.first_stage.cores[0].legs) {
     options.push('legs')
   }
+  if (rocket.first_stage.cores[0].block === 5) {
+    options.push('block5')
+  }
   if (rocket.first_stage.cores[0].gridfins) {
     options.push('farings')
   }
