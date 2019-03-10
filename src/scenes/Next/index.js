@@ -10,6 +10,23 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  .left,
+  .right {
+    color: #fff;
+    position: fixed;
+    font-weight: 100;
+    bottom: 5px;
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  .left {
+    left: 5px;
+  }
+  .right {
+    right: 5px;
+  }
 `
 
 const Main = styled.div`
@@ -18,18 +35,6 @@ const Main = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`
-
-const Source = styled.div`
-  color: #fff;
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  font-weight: 100;
-
-  @media (max-width: 600px) {
-    display: none;
-  }
 `
 
 export default class extends React.Component {
@@ -47,7 +52,7 @@ export default class extends React.Component {
         <Header top />
         <Main>{this.state.data && <Launch {...this.state.data} />}</Main>
         <ScrollButton />
-        <Source>
+        <div className="right">
           {'Source: '}
           <a
             href="https://github.com/r-spacex/SpaceX-API"
@@ -56,7 +61,24 @@ export default class extends React.Component {
           >
             SpaceX-API
           </a>
-        </Source>
+        </div>
+        <div className="left">
+          <a
+            href="https://github.com/louisjc/spacexlaunches.com/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Report issue
+          </a>
+          {' - '}
+          <a
+            href="https://github.com/louisjc/spacexlaunches.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </div>
       </Container>
     )
   }

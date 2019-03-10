@@ -16,6 +16,7 @@ const Container = styled.div`
   box-shadow: 0 -2px 20px 0 hsla(211, 74%, 9%, 1);
 
   .flight-container {
+    background: #011e37;
     flex: 1;
     font-size: 14px;
     display: flex;

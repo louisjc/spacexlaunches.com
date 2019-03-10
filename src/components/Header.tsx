@@ -1,12 +1,13 @@
 import React, { FunctionComponent } from 'react'
 import styled from 'styled-components/macro'
 
-const Container = styled.header`
+const Container = styled.header<{ bg: boolean }>`
   color: #fff;
   padding: 10px;
   width: 100%;
   display: flex;
-
+  ${p => (p.bg ? 'background: #011e37;' : '')}
+  z-index: 10;
   h1 {
     flex: 1;
     line-height: 1;
@@ -27,7 +28,7 @@ const Container = styled.header`
 `
 
 const Header: FunctionComponent<{ top: boolean }> = props => (
-  <Container>
+  <Container bg={!props.top}>
     <h1>SpaceXLaunches.com</h1>
     {props.top ? (
       <span>Fan content - Not an official site</span>
