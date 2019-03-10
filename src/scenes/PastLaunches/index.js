@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import axios from 'axios'
 import ScrollButton from '../../components/ScrollButton'
 import Header from '../../components/Header'
@@ -65,7 +65,6 @@ export default class extends React.Component {
             )
           }}
         </SizeMe>
-
         <ScrollButton to="top" />
       </Container>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import Destination from './Destination'
 import Rocket from './Rocket'
 import Caption from './Caption'

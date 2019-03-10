@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { FunctionComponent } from 'react'
+import styled from 'styled-components/macro'
 import arrow from './arrow-bottom.svg'
 
 const Container = styled.div`
@@ -25,7 +25,7 @@ const Img = styled.img`
   height: 0.8em;
 `
 
-const scroll = toTop => {
+const scroll = (toTop: boolean) => {
   const h = toTop
     ? 0
     : Math.max(document.documentElement.clientHeight, window.innerHeight || 0)
@@ -37,8 +37,8 @@ const scroll = toTop => {
     })
 }
 
-export default function({ to }) {
-  const toTop = to === 'top'
+const ScrollButton: FunctionComponent<{ to: 'top' | 'bottom' }> = props => {
+  const toTop = props.to === 'top'
   return (
     <Container onClick={scroll(toTop)}>
       {toTop && (
@@ -49,3 +49,5 @@ export default function({ to }) {
     </Container>
   )
 }
+
+export default ScrollButton
