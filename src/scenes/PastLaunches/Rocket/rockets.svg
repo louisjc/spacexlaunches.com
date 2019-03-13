@@ -1,213 +1,211 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="50" height="538" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 50 538">
-  <defs>
-    <g id="crew-dragon" transform="translate(-3 -339)">
-      <defs>
-        <linearGradient id="b">
-          <stop offset="0" stop-color="#f80"/>
-          <stop offset="1" stop-color="#f80" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="a">
-          <stop offset="0" stop-color="#f80"/>
-          <stop offset="1" stop-color="#f80" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <g transform="translate(-64 -849.362)">
-        <path d="M114 916.362c0 4 28 4 28 0 0 0 0-12-6-24-4-8-12-8-16 0-6 12-6 24-6 24z" fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2"/>
-        <path d="M120 892.362c4 1 12 1 16 0" fill="none" stroke="#404040"/>
-        <path d="M115 905.362l-1 11 4 3h19l5-3-1-11h-5s-1.285 4.567-1.79 10h-12.42c-.505-5.433-1.79-10-1.79-10z" fill="#404040" fill-rule="evenodd"/>
-        <ellipse cx="128" cy="901.362" rx="1.5" ry="3" fill="#41413f"/>
-        <ellipse ry="3" rx="1.5" cy="901.362" cx="123.5" fill="#41413f"/>
-        <path d="M126 896.362c-.554 0-1 .446-1 1v1c0-.554.446-1 1-1h4c.554 0 1 .446 1 1v-1c0-.554-.446-1-1-1h-4z" fill="#c0c0be"/>
-        <ellipse cx="132.5" cy="901.362" rx="1.5" ry="3" fill="#41413f"/>
-        <path d="M126 907.362c-.554 0-1-.446-1-1v-1c0 .554.446 1 1 1h4c.554 0 1-.446 1-1v1c0 .554-.446 1-1 1h-4z" fill="#c0c0be"/>
-      </g>
-      <path d="M70 68h7v3l3 6v19H48V77l3-5.948V68h16" fill="#fff" stroke="#404040" stroke-width="2" stroke-linejoin="round"/>
-      <path fill="#404040" d="M51 71h1v25h-1zM76 71h1v25h-1zM63 68h2v28h-2zM67 63c-.554 0-1 .446-1 1v5c0 .554.446 3 1 3v-8h2v8c.554 0 1-2.446 1-3v-5c0-.554-.446-1-1-1z"/>
-      <path fill="#fff" d="M67 65h2v7h-2z"/>
-      <path fill="#404040" d="M68 92h4v2h-4zM57 92h4v2h-4z"/>
-    </g>
-    <g id="dragon" transform="translate(-3 -339)">
-      <g transform="translate(-64 -175)">
-        <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M112 957.36c-4 0-6.4 1.9-8 8l-5 19c-1.98 6 5 6 13 6s14.66 0 13-6l-5-19c-1.6-6.1-4-8-8-8z" stroke-linejoin="round"/>
-        <path fill="#404040" d="M99 985.36h26v3s-5 2-13 2-13-2-13-2z"/>
-        <path fill="#c0c0be" d="M110 977.36c-.55 0-1-.44-1-1v-1c0 .56.45 1 1 1h4c.55 0 1-.44 1-1v1c0 .56-.45 1-1 1h-4zm0-7c-.55 0-1 .45-1 1v1c0-.55.45-1 1-1h4c.55 0 1 .45 1 1v-1c0-.55-.45-1-1-1h-4zm-1 10c-.55 0-1 .45-1 1v1c0-.55.45-1 1-1h6c.55 0 1 .45 1 1v-1c0-.55-.45-1-1-1z"/>
-        <circle cx="112" cy="973.36" r="1" fill="#404040"/>
-        <path fill="#404040" d="M104 964.36h16v1h-16z"/>
-      </g>
-      <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M37 814.36h-3c-1 0-2 1-2 2v14c0 1 1 2 2 2h3" stroke-linejoin="round"/>
-      <path fill="#fff" stroke="#404040" stroke-width="2" d="M54 811.44h7v2.92h1c2 0 2 2 2 2v14c0 2-2 2-2 2h-1v3.08H35v-24h16" stroke-linejoin="round"/>
-      <path fill="#404040" d="M51 806.44c-.55 0-1 .44-1 1v5c0 .55.45 3 1 3v-8h2v8c.55 0 1-2.45 1-3v-5c0-.56-.45-1-1-1z"/>
-      <path fill="#fff" d="M51 807.37h2v8.08h-2z"/>
-      <path fill="#404040" d="M50 830.44h4v2h-4zm-11 0h3v2h-3z"/>
-      <path fill="none" stroke="#404040" stroke-width="2" d="M61 814.36h-3c-1 0-2 1-2 2v14c0 1 1 2 2 2h3" stroke-linejoin="round"/>
-      <path fill="#404040" fill-rule="evenodd" d="M61 814.36c-.83 0-1.55.4-2.08.92-.53.53-.92 1.25-.92 2.08v11.92c0 .83.4 1.55.92 2.08.53.53 1.25.92 2.08.92h1c-.83 0-1.55-.4-2.08-.92-.53-.53-.92-1.25-.92-2.08v-11.92c0-.83.4-1.55.92-2.08.53-.53 1.25-.92 2.08-.92z" style="block-progression:tb;isolation:auto;line-height:normal;mix-blend-mode:normal;text-align:start;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-transform:none" color="#000" font-family="sans-serif" overflow="visible" solid-color="#000000" white-space="normal"/>
-    </g>
-    <g id="payload" fill-rule="evenodd" transform="translate(-3 -339)">
-      <path fill="#fff" stroke="#404040" stroke-width="2" d="M112 20.36c-4 0-19 20-19 40v50c0 3 6 9 6 11v3h26v-3c0-2 6-8 6-11v-50c0-20-15-40-19-40z"/>
-      <path fill="#404040" d="M93 112.36h19c-12 0-19-2-19-2zm5 8h12c-6 0-12 2-12 2zm33-8h-19c12 0 19-2 19-2zm-5 8h-10c6 0 10 2 10 2z"/>
-    </g>
-    <g id="SecondStage" transform="translate(-3 -339)">
-      <rect width="26" height="46" x="35" y="146.36" fill="#fff" stroke="#404040" stroke-width="2" stroke-dashoffset="10" ry="0" rx="0" stroke-linecap="round"/>
-      <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M38 192.36s2 4 10 4 10-4 10-4zm0 36c1.43-20 9-28 9-28h2s7.57 8 9 28H48z"/>
-      <path fill="#404040" fill-rule="evenodd" d="M46 200.36v-5h4v5z"/>
-    </g>
-    <!-- Options -->
-    <g id="block5">
-        <rect width="24.8" height="49" x="11.6" y="197" fill="#333" rx="0" ry="0"/>
-    </g>
-    <g id="leg" fill-rule="evenodd">
-      <path fill="#fff" stroke="#404040" stroke-width="2" d="M49 514.36v-1l2.6-19.5-.73-1.52 1.1-1.23 1.2-9.1-.8-1.5 1.2-1.26L55 468.4c1-1 4 0 4 0s3 25 4 46h-1s-2-12-4-12c-4 0-8 12-8 12z" stroke-linejoin="round"/>
-      <path fill="#404040" d="M62 502.36c-2-11-7-6-9 1 3-6 7-8 9-1zm-2.58-28.23c-2.84.8-3.65-1.1-4.18-3.64l.25-1.1c.5 2 1.2 3.6 3.8 2.6z"/>
-    </g>
-    <g id="legs" transform="translate(-24 11)">
-      <use xlink:href="#leg"/>
-      <use xlink:href="#leg" transform="matrix(-1 0 0 1 96 0)"/>
-      <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M55 468.36c1-1 4 0 4 0 0-4-.57-3.9-2-5-1.3-1-1-1-2 5zm-14 0c-1-1-4 0-4 0 0-4 .57-3.9 2-5 1.3-1 1-1 2 5z" stroke-linejoin="round"/>
-    </g>
-    <g id="farings" transform="translate(-24 11)">
-      <g transform="translate(0 1)">
-        <rect width="7" height="13" x="35" y="234.36" fill="#fff" stroke="#222" stroke-width="2" rx="0" ry="0" stroke-linecap="round" stroke-linejoin="round"/>
-        <g fill="#222">
-          <path fill-rule="evenodd" stroke="#222" stroke-width="2" d="M37 234.36v-2c0-2 1-3 3-3 0 0 1 0 1 3v2h-2l-1 4z" stroke-linejoin="round"/>
-          <rect width="7" height="1" x="35" y="236.36" rx="0" ry="0"/>
-          <rect width="1" height="12" x="37" y="235.36" ry="0" rx="0"/>
-          <rect width="1" height="12" x="39" y="235.36" rx="0" ry="0"/>
-          <rect width="7" height="1" x="35" y="238.36" ry="0" rx="0"/>
-          <rect width="7" height="1" x="35" y="240.36" rx="0" ry="0"/>
-          <rect width="7" height="1" x="35" y="242.36" ry="0" rx="0"/>
-          <rect width="7" height="1" x="35" y="244.36" rx="0" ry="0"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="538" viewBox="0 0 50 538">
+    <defs>
+        <g id="crew-dragon" transform="translate(-3 -339)">
+            <defs>
+                <linearGradient id="b">
+                    <stop offset="0" stop-color="#f80"/>
+                    <stop offset="1" stop-color="#f80" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="a">
+                    <stop offset="0" stop-color="#f80"/>
+                    <stop offset="1" stop-color="#f80" stop-opacity="0"/>
+                </linearGradient>
+            </defs>
+            <g transform="translate(-64 -849.362)">
+                <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M114 916.362c0 4 28 4 28 0 0 0 0-12-6-24-4-8-12-8-16 0-6 12-6 24-6 24z"/>
+                <path fill="none" stroke="#404040" d="M120 892.362c4 1 12 1 16 0"/>
+                <path fill="#404040" fill-rule="evenodd" d="M115 905.362l-1 11 4 3h19l5-3-1-11h-5s-1.285 4.567-1.79 10h-12.42c-.505-5.433-1.79-10-1.79-10z"/>
+                <ellipse cx="128" cy="901.362" fill="#41413f" rx="1.5" ry="3"/>
+                <ellipse cx="123.5" cy="901.362" fill="#41413f" rx="1.5" ry="3"/>
+                <path fill="#c0c0be" d="M126 896.362c-.554 0-1 .446-1 1v1c0-.554.446-1 1-1h4c.554 0 1 .446 1 1v-1c0-.554-.446-1-1-1h-4z"/>
+                <ellipse cx="132.5" cy="901.362" fill="#41413f" rx="1.5" ry="3"/>
+                <path fill="#c0c0be" d="M126 907.362c-.554 0-1-.446-1-1v-1c0 .554.446 1 1 1h4c.554 0 1-.446 1-1v1c0 .554-.446 1-1 1h-4z"/>
+            </g>
+            <path fill="#fff" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M70 68h7v3l3 6v19H48V77l3-5.948V68h16"/>
+            <path fill="#404040" d="M51 71h1v25h-1zM76 71h1v25h-1zM63 68h2v28h-2zM67 63c-.554 0-1 .446-1 1v5c0 .554.446 3 1 3v-8h2v8c.554 0 1-2.446 1-3v-5c0-.554-.446-1-1-1z"/>
+            <path fill="#fff" d="M67 65h2v7h-2z"/>
+            <path fill="#404040" d="M68 92h4v2h-4zM57 92h4v2h-4z"/>
         </g>
-      </g>
-      <g transform="matrix(-1 0 0 1 96 1)">
-        <rect width="7" height="13" x="35" y="234.36" fill="#fff" stroke="#222" stroke-width="2" rx="0" ry="0" stroke-linecap="round" stroke-linejoin="round"/>
-        <g fill="#222">
-          <path fill-rule="evenodd" stroke="#222" stroke-width="2" d="M37 234.36v-2c0-2 1-3 3-3 0 0 1 0 1 3v2h-2l-1 4z" stroke-linejoin="round"/>
-          <rect width="7" height="1" x="35" y="236.36" rx="0" ry="0"/>
-          <rect width="1" height="12" x="37" y="235.36" ry="0" rx="0"/>
-          <rect width="1" height="12" x="39" y="235.36" rx="0" ry="0"/>
-          <rect width="7" height="1" x="35" y="238.36" ry="0" rx="0"/>
-          <rect width="7" height="1" x="35" y="240.36" rx="0" ry="0"/>
-          <rect width="7" height="1" x="35" y="242.36" ry="0" rx="0"/>
-          <rect width="7" height="1" x="35" y="244.36" rx="0" ry="0"/>
+        <g id="dragon" transform="translate(-3 -339)">
+            <g transform="translate(-64 -175)">
+                <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M112 957.36c-4 0-6.4 1.9-8 8l-5 19c-1.98 6 5 6 13 6s14.66 0 13-6l-5-19c-1.6-6.1-4-8-8-8z"/>
+                <path fill="#404040" d="M99 985.36h26v3s-5 2-13 2-13-2-13-2z"/>
+                <path fill="#c0c0be" d="M110 977.36c-.55 0-1-.44-1-1v-1c0 .56.45 1 1 1h4c.55 0 1-.44 1-1v1c0 .56-.45 1-1 1h-4zm0-7c-.55 0-1 .45-1 1v1c0-.55.45-1 1-1h4c.55 0 1 .45 1 1v-1c0-.55-.45-1-1-1h-4zm-1 10c-.55 0-1 .45-1 1v1c0-.55.45-1 1-1h6c.55 0 1 .45 1 1v-1c0-.55-.45-1-1-1z"/>
+                <circle cx="112" cy="973.36" r="1" fill="#404040"/>
+                <path fill="#404040" d="M104 964.36h16v1h-16z"/>
+            </g>
+            <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M37 814.36h-3c-1 0-2 1-2 2v14c0 1 1 2 2 2h3"/>
+            <path fill="#fff" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M54 811.44h7v2.92h1c2 0 2 2 2 2v14c0 2-2 2-2 2h-1v3.08H35v-24h16"/>
+            <path fill="#404040" d="M51 806.44c-.55 0-1 .44-1 1v5c0 .55.45 3 1 3v-8h2v8c.55 0 1-2.45 1-3v-5c0-.56-.45-1-1-1z"/>
+            <path fill="#fff" d="M51 807.37h2v8.08h-2z"/>
+            <path fill="#404040" d="M50 830.44h4v2h-4zm-11 0h3v2h-3z"/>
+            <path fill="none" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M61 814.36h-3c-1 0-2 1-2 2v14c0 1 1 2 2 2h3"/>
+            <path fill="#404040" fill-rule="evenodd" d="M61 814.36c-.83 0-1.55.4-2.08.92-.53.53-.92 1.25-.92 2.08v11.92c0 .83.4 1.55.92 2.08.53.53 1.25.92 2.08.92h1c-.83 0-1.55-.4-2.08-.92-.53-.53-.92-1.25-.92-2.08v-11.92c0-.83.4-1.55.92-2.08.53-.53 1.25-.92 2.08-.92z" color="#000" font-family="sans-serif" overflow="visible" solid-color="#000000" style="block-progression:tb;isolation:auto;line-height:normal;mix-blend-mode:normal;text-align:start;text-decoration-color:#000000;text-decoration-line:none;text-decoration-style:solid;text-indent:0;text-transform:none" white-space="normal"/>
         </g>
-      </g>
-    </g>
-    <g id="falcon9_v1.0" transform="translate(-3 -339)">
-      <g id="falcon9_v1.0-FirstStage" transform="translate(-3 -339)">
-        <g transform="translate(16 84)">
-          <rect width="26" height="28" x="35" y="164.36" fill="#fff" stroke="#404040" stroke-width="2" stroke-dashoffset="10" ry="0" rx="0" stroke-linecap="round"/>
-          <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M38 192.36s2 4 10 4 10-4 10-4z"/>
-          <path fill="url(#linearGradient13034)" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M40 220.36c1.14-16 7-20 7-20h2s5.86 4 7 20h-8z"/>
-          <path fill="#404040" fill-rule="evenodd" d="M46 200.36v-5h4v5z"/>
-          <path fill="none" stroke="#404040" stroke-width="2" d="M40 164.36l1-2h14l1 2" stroke-linejoin="round"/>
+        <g id="payload" fill-rule="evenodd" transform="translate(-3 -339)">
+            <path fill="#fff" stroke="#404040" stroke-width="2" d="M112 20.36c-4 0-19 20-19 40v50c0 3 6 9 6 11v3h26v-3c0-2 6-8 6-11v-50c0-20-15-40-19-40z"/>
+            <path fill="#404040" d="M93 112.36h19c-12 0-19-2-19-2zm5 8h12c-6 0-12 2-12 2zm33-8h-19c12 0 19-2 19-2zm-5 8h-10c6 0 10 2 10 2z"/>
         </g>
-        <g transform="translate(16 20)">
-          <path fill="#404040" fill-rule="evenodd" d="M45 526.36h6c0-4-2-7-2-7v-2h-2v2s-2 3-2 7z"/>
-          <path fill="#fff" stroke="#404040" stroke-width="2" stroke-dashoffset="10" d="M35 256.36h26v263H35z" stroke-linecap="round"/>
-          <path fill="none" stroke="#404040" d="M36 291.86h24"/>
-          <rect width="8" height="4" x="44" y="273.36" fill="#c65252" stroke="#c65252" stroke-width="2" rx="0" ry="0" stroke-linecap="round" stroke-linejoin="round"/>
-          <path fill="#404040" fill-rule="evenodd" d="M36 526.36h6c0-4-2-7-2-7v-2h-2v2s-2 3-2 7zm18 0h6c0-4-2-7-2-7v-2h-2v2s-2 3-2 7z"/>
-          <path fill="none" stroke="#404040" d="M36 512.86h24"/>
-          <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M36 519.36v-4c0-5 4-8 4-8s2 1 2 4v8zm24 0v-4c0-5-4-8-4-8s-2 1-2 4v8z" stroke-linejoin="round"/>
-          <rect width="2" height="2" x="47" y="288.36" fill="#404040" rx="0" ry="0"/>
+        <g id="SecondStage" transform="translate(-3 -339)">
+            <rect width="26" height="46" x="35" y="146.36" fill="#fff" stroke="#404040" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2" rx="0" ry="0"/>
+            <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M38 192.36s2 4 10 4 10-4 10-4zm0 36c1.43-20 9-28 9-28h2s7.57 8 9 28H48z"/>
+            <path fill="#404040" fill-rule="evenodd" d="M46 200.36v-5h4v5z"/>
         </g>
-      </g>
-    </g>
-    <g id="falcon9_v1.1-FirstStage" transform="translate(-3 -339)">
-      <path fill="#fff" stroke="#404040" stroke-width="2" stroke-dashoffset="10" d="M35 192.36h26v325l-2 2H37l-2-2z" stroke-linecap="round"/>
-      <path fill="#404040" fill-rule="evenodd" d="M35 514.36v3l2 2s-1 2-1 5h9.15c-.1.6-.15 1.27-.15 2h6c0-.73-.06-1.4-.15-2H60c0-3-1-5-1-5l2-2v-3H35z"/>
-      <path fill="none" stroke="#404040" d="M36 236.86h24"/>
-      <rect width="8" height="4" x="44" y="216.36" fill="#c65252" stroke="#c65252" stroke-width="2" rx="0" ry="0" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-
-    <g id="falcon9_FT-FirstStage" transform="translate(-3 -339)">
-      <path fill="#fff" stroke="#404040" stroke-width="2" stroke-dashoffset="10" d="M35 186.36h26v331l-2 2H37l-2-2z" stroke-linecap="round"/>
-      <path fill="#404040" fill-rule="evenodd" d="M35 514.36v3l2 2s-1 2-1 5h9.15c-.1.6-.15 1.27-.15 2h6c0-.73-.06-1.4-.15-2H60c0-3-1-5-1-5l2-2v-3H35z"/>
-      <path fill="none" stroke="#404040" d="M36 234.86h24"/>
-      <rect width="8" height="4" x="44" y="214.36" fill="#c65252" stroke="#c65252" stroke-width="2" rx="0" ry="0" stroke-linecap="round" stroke-linejoin="round"/>
-    </g>
-    <g id="falcon9_FT-SecondStage" transform="translate(-3 -339)">
-      <rect width="26" height="60" x="35" y="132.36" fill="#fff" stroke="#404040" stroke-width="2" stroke-dashoffset="10" ry="0" rx="0" stroke-linecap="round"/>
-      <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M38 192.36s2 4 10 4 10-4 10-4zm0 36c1.43-20 9-28 9-28h2s7.57 8 9 28H48z"/>
-      <path fill="#404040" fill-rule="evenodd" d="M46 200.36v-5h4v5z"/>
-    </g>
-    <g id='falconheavy_booster' transform="translate(46 -16.36)">
-      <path fill="#fff" stroke="#404040" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2" d="M35 228.36c0-12 5-24 13-24s13 12 13 24v289l-2 2H37l-2-2z"/>
-      <path fill="#404040" fill-rule="evenodd" d="M37 519.36s-1 2-1 5h9.15c-.09.6-.15 1.27-.15 2h6c0-.73-.06-1.4-.15-2H60c0-3-1-5-1-5z"/>
-      <path fill="none" stroke="#404040" d="M36 236.86h24"/>
-      <rect width="26" height="1" x="35" y="515.36" fill="#404040" rx="0" ry="0"/>
-    </g> 
-    <!-- Rockets -->
-    <g id="falcon1" transform="translate(-43 241)">
-      <path fill="#fff" stroke="#404040" stroke-width="2" d="M63 200.36l-1 2v8s2 2 5 2 5-2 5-2v-8l-1-2h-8z" stroke-linecap="round" stroke-linejoin="round"/>
-      <path fill="#404040" d="M66 212.36v3s-2 3-2 7h6c0-4-2-7-2-7v-3z"/>
-      <path fill="#fff" stroke="#404040" stroke-width="2" d="M62 210.36h10v74s-3 1-5 1-5-1-5-1z" stroke-linecap="round" stroke-linejoin="round"/>
-      <path fill="#404040" fill-rule="evenodd" d="M64 296.36h6c0-3-2-5-2-5v-2h-2v2s-2 2-2 5z"/>
-      <path fill="none" stroke="#404040" stroke-width="2" d="M62 284.36l4 5h2l4-5"/>
-      <path fill="#404040" d="M63 224.36h8v1h-8z"/>
-      <g fill-rule="evenodd">
-        <path fill="#fff" stroke="#404040" stroke-width="2" d="M67 178.36l-3 4-1 5v13h8v-13l-1-5z" stroke-linejoin="round"/>
-        <path fill="#404040" d="M63 187.36h5l-5 1z"/>
-      </g>
-    </g>
-    <g id="falcon9_v1.0_dragonNT">
-      <use xlink:href="#falcon9_v1.0-FirstStage" transform="translate(-37 330)"/>
-      <g id="Payload0" transform="translate(-552 -339)">
-        <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M576.04 525.36c-4 0-6.4 1.9-8 8l-5 19c-1.98 6 5 6 13 6s14.67 0 13-6l-5-19c-1.6-6.1-4-8-8-8z" stroke-linejoin="round"/>
-        <path fill="#404040" d="M563.04 553.36h26v3s-5 2-13 2-13-2-13-2zm5-21h16v1h-16z"/>
-        <path fill="#fff" stroke="#404040" stroke-width="2" d="M589 554.44v24h-26v-24z" stroke-linejoin="round"/>
-      </g>
-    </g>
-    <g id="falcon9_v1.0_dragon">
-      <use xlink:href="#falcon9_v1.0-FirstStage" transform="translate(-37 330)"/>
-      <use xlink:href="#dragon" transform="translate(-21 -257)"/>
-    </g>
-    <g id="falcon9_v1.1_sat" transform="translate(-165 330)">
-      <use xlink:href="#payload" transform="translate(80 42)"/>
-      <use xlink:href="#SecondStage" transform="translate(144 20)"/>
-      <use xlink:href="#falcon9_v1.1-FirstStage" transform="translate(144 20)"/>
-    </g>
-    <g id="falcon9_v1.1_dragon" transform="translate(-165 330)">
-      <use xlink:href="#dragon" transform="translate(144 -669)"/>
-      <use xlink:href="#SecondStage" transform="translate(144 20)"/>
-      <use xlink:href="#falcon9_v1.1-FirstStage" transform="translate(144 20)"/>
-    </g>
-    <g id="falcon9_FT_sat" transform="translate(-165 330)">
-      <use xlink:href="#payload" transform="translate(80 22)"/>
-      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
-      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
-    </g>
-    <g id="falconheavy_FT_sat" transform="translate(-165 330)">
-      <use xlink:href="#payload" transform="translate(80 22)"/>
-      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
-      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
-
-      <g transform="translate(65 -303)">
-        <use xlink:href="#falconheavy_booster"/>
-        <path fill="#404040" d="M30 512.36h4v4h-4zM30 236.36h4v4h-4z" transform="translate(76 -16.36)"/>
-      </g>
-      <g transform="translate(125 -303)">
-        <use xlink:href="#falconheavy_booster"/>
-        <path fill="#404040" d="M30 512.36h4v4h-4zM30 236.36h4v4h-4z" transform="translate(46 -16.36)"/>
-      </g>
-      <g transform="translate(-30 0)">
-        <use xlink:href="#legs" transform="translate(165 -330)"/>
-        <use xlink:href="#farings" transform="translate(165 -330)"/>
-      </g>
-      <g transform="translate(30 0)">
-        <use xlink:href="#legs" transform="translate(165 -330)"/>
-        <use xlink:href="#farings" transform="translate(165 -330)"/>
-      </g>
-    </g>
-    <g id="falcon9_FT_dragon" transform="translate(-165 330)">
-      <use xlink:href="#dragon" transform="translate(144 -689)"/>
-      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
-      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
-    </g>
-    <g id="falcon9_FT_crew-dragon" transform="translate(-165 330)">
-      <use xlink:href="#crew-dragon" transform="translate(128 50)"/>
-      <use xlink:href="#falcon9_FT-SecondStage" transform="translate(144 14)"/>
-      <use xlink:href="#falcon9_FT-FirstStage" transform="translate(144 20)"/>
-    </g>
-  </defs>
+<!--Options-->
+        <g id="block5">
+            <rect width="24.8" height="49" x="11.6" y="197" fill="#333" rx="0" ry="0"/>
+        </g>
+        <g id="leg" fill-rule="evenodd">
+            <path fill="#fff" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M49 514.36v-1l2.6-19.5-.73-1.52 1.1-1.23 1.2-9.1-.8-1.5 1.2-1.26L55 468.4c1-1 4 0 4 0s3 25 4 46h-1s-2-12-4-12c-4 0-8 12-8 12z"/>
+            <path fill="#404040" d="M62 502.36c-2-11-7-6-9 1 3-6 7-8 9-1zm-2.58-28.23c-2.84.8-3.65-1.1-4.18-3.64l.25-1.1c.5 2 1.2 3.6 3.8 2.6z"/>
+        </g>
+        <g id="legs" transform="translate(-24 11)">
+            <use xlink:href="#leg"/>
+            <use transform="matrix(-1 0 0 1 96 0)" xlink:href="#leg"/>
+            <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M55 468.36c1-1 4 0 4 0 0-4-.57-3.9-2-5-1.3-1-1-1-2 5zm-14 0c-1-1-4 0-4 0 0-4 .57-3.9 2-5 1.3-1 1-1 2 5z"/>
+        </g>
+        <g id="farings" transform="translate(-24 11)">
+            <g transform="translate(0 1)">
+                <rect width="7" height="13" x="35" y="234.36" fill="#fff" stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" rx="0" ry="0"/>
+                <g fill="#222">
+                    <path fill-rule="evenodd" stroke="#222" stroke-linejoin="round" stroke-width="2" d="M37 234.36v-2c0-2 1-3 3-3 0 0 1 0 1 3v2h-2l-1 4z"/>
+                    <rect width="7" height="1" x="35" y="236.36" rx="0" ry="0"/>
+                    <rect width="1" height="12" x="37" y="235.36" rx="0" ry="0"/>
+                    <rect width="1" height="12" x="39" y="235.36" rx="0" ry="0"/>
+                    <rect width="7" height="1" x="35" y="238.36" rx="0" ry="0"/>
+                    <rect width="7" height="1" x="35" y="240.36" rx="0" ry="0"/>
+                    <rect width="7" height="1" x="35" y="242.36" rx="0" ry="0"/>
+                    <rect width="7" height="1" x="35" y="244.36" rx="0" ry="0"/>
+                </g>
+            </g>
+            <g transform="matrix(-1 0 0 1 96 1)">
+                <rect width="7" height="13" x="35" y="234.36" fill="#fff" stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" rx="0" ry="0"/>
+                <g fill="#222">
+                    <path fill-rule="evenodd" stroke="#222" stroke-linejoin="round" stroke-width="2" d="M37 234.36v-2c0-2 1-3 3-3 0 0 1 0 1 3v2h-2l-1 4z"/>
+                    <rect width="7" height="1" x="35" y="236.36" rx="0" ry="0"/>
+                    <rect width="1" height="12" x="37" y="235.36" rx="0" ry="0"/>
+                    <rect width="1" height="12" x="39" y="235.36" rx="0" ry="0"/>
+                    <rect width="7" height="1" x="35" y="238.36" rx="0" ry="0"/>
+                    <rect width="7" height="1" x="35" y="240.36" rx="0" ry="0"/>
+                    <rect width="7" height="1" x="35" y="242.36" rx="0" ry="0"/>
+                    <rect width="7" height="1" x="35" y="244.36" rx="0" ry="0"/>
+                </g>
+            </g>
+        </g>
+        <g id="falcon9_v1.0" transform="translate(-3 -339)">
+            <g id="falcon9_v1.0-FirstStage" transform="translate(-3 -339)">
+                <g transform="translate(16 84)">
+                    <rect width="26" height="28" x="35" y="164.36" fill="#fff" stroke="#404040" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2" rx="0" ry="0"/>
+                    <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M38 192.36s2 4 10 4 10-4 10-4z"/>
+                    <path fill="url(#linearGradient13034)" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M40 220.36c1.14-16 7-20 7-20h2s5.86 4 7 20h-8z"/>
+                    <path fill="#404040" fill-rule="evenodd" d="M46 200.36v-5h4v5z"/>
+                    <path fill="none" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M40 164.36l1-2h14l1 2"/>
+                </g>
+                <g transform="translate(16 20)">
+                    <path fill="#404040" fill-rule="evenodd" d="M45 526.36h6c0-4-2-7-2-7v-2h-2v2s-2 3-2 7z"/>
+                    <path fill="#fff" stroke="#404040" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2" d="M35 256.36h26v263H35z"/>
+                    <path fill="none" stroke="#404040" d="M36 291.86h24"/>
+                    <rect width="8" height="4" x="44" y="273.36" fill="#c65252" stroke="#c65252" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" rx="0" ry="0"/>
+                    <path fill="#404040" fill-rule="evenodd" d="M36 526.36h6c0-4-2-7-2-7v-2h-2v2s-2 3-2 7zm18 0h6c0-4-2-7-2-7v-2h-2v2s-2 3-2 7z"/>
+                    <path fill="none" stroke="#404040" d="M36 512.86h24"/>
+                    <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M36 519.36v-4c0-5 4-8 4-8s2 1 2 4v8zm24 0v-4c0-5-4-8-4-8s-2 1-2 4v8z"/>
+                    <rect width="2" height="2" x="47" y="288.36" fill="#404040" rx="0" ry="0"/>
+                </g>
+            </g>
+        </g>
+        <g id="falcon9_v1.1-FirstStage" transform="translate(-3 -339)">
+            <path fill="#fff" stroke="#404040" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2" d="M35 192.36h26v325l-2 2H37l-2-2z"/>
+            <path fill="#404040" fill-rule="evenodd" d="M35 514.36v3l2 2s-1 2-1 5h9.15c-.1.6-.15 1.27-.15 2h6c0-.73-.06-1.4-.15-2H60c0-3-1-5-1-5l2-2v-3H35z"/>
+            <path fill="none" stroke="#404040" d="M36 236.86h24"/>
+            <rect width="8" height="4" x="44" y="216.36" fill="#c65252" stroke="#c65252" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" rx="0" ry="0"/>
+        </g>
+        <g id="falcon9_FT-FirstStage" transform="translate(-3 -339)">
+            <path fill="#fff" stroke="#404040" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2" d="M35 186.36h26v331l-2 2H37l-2-2z"/>
+            <path fill="#404040" fill-rule="evenodd" d="M35 514.36v3l2 2s-1 2-1 5h9.15c-.1.6-.15 1.27-.15 2h6c0-.73-.06-1.4-.15-2H60c0-3-1-5-1-5l2-2v-3H35z"/>
+            <path fill="none" stroke="#404040" d="M36 234.86h24"/>
+            <rect width="8" height="4" x="44" y="214.36" fill="#c65252" stroke="#c65252" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" rx="0" ry="0"/>
+        </g>
+        <g id="falcon9_FT-SecondStage" transform="translate(-3 -339)">
+            <rect width="26" height="60" x="35" y="132.36" fill="#fff" stroke="#404040" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2" rx="0" ry="0"/>
+            <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-width="2" d="M38 192.36s2 4 10 4 10-4 10-4zm0 36c1.43-20 9-28 9-28h2s7.57 8 9 28H48z"/>
+            <path fill="#404040" fill-rule="evenodd" d="M46 200.36v-5h4v5z"/>
+        </g>
+        <g id="falconheavy_booster" transform="translate(46 -16.36)">
+            <path fill="#fff" stroke="#404040" stroke-dashoffset="10" stroke-linecap="round" stroke-width="2" d="M35 228.36c0-12 5-24 13-24s13 12 13 24v289l-2 2H37l-2-2z"/>
+            <path fill="#404040" fill-rule="evenodd" d="M37 519.36s-1 2-1 5h9.15c-.09.6-.15 1.27-.15 2h6c0-.73-.06-1.4-.15-2H60c0-3-1-5-1-5z"/>
+            <path fill="none" stroke="#404040" d="M36 236.86h24"/>
+            <rect width="26" height="1" x="35" y="515.36" fill="#404040" rx="0" ry="0"/>
+        </g>
+<!--Rockets-->
+        <g id="falcon1" transform="translate(-43 241)">
+            <path fill="#fff" stroke="#404040" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M63 200.36l-1 2v8s2 2 5 2 5-2 5-2v-8l-1-2h-8z"/>
+            <path fill="#404040" d="M66 212.36v3s-2 3-2 7h6c0-4-2-7-2-7v-3z"/>
+            <path fill="#fff" stroke="#404040" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M62 210.36h10v74s-3 1-5 1-5-1-5-1z"/>
+            <path fill="#404040" fill-rule="evenodd" d="M64 296.36h6c0-3-2-5-2-5v-2h-2v2s-2 2-2 5z"/>
+            <path fill="none" stroke="#404040" stroke-width="2" d="M62 284.36l4 5h2l4-5"/>
+            <path fill="#404040" d="M63 224.36h8v1h-8z"/>
+            <g fill-rule="evenodd">
+                <path fill="#fff" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M67 178.36l-3 4-1 5v13h8v-13l-1-5z"/>
+                <path fill="#404040" d="M63 187.36h5l-5 1z"/>
+            </g>
+        </g>
+        <g id="falcon9_v1.0_dragonNT">
+            <use transform="translate(-37 330)" xlink:href="#falcon9_v1.0-FirstStage"/>
+            <g id="Payload0" transform="translate(-552 -339)">
+                <path fill="#fff" fill-rule="evenodd" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M576.04 525.36c-4 0-6.4 1.9-8 8l-5 19c-1.98 6 5 6 13 6s14.67 0 13-6l-5-19c-1.6-6.1-4-8-8-8z"/>
+                <path fill="#404040" d="M563.04 553.36h26v3s-5 2-13 2-13-2-13-2zm5-21h16v1h-16z"/>
+                <path fill="#fff" stroke="#404040" stroke-linejoin="round" stroke-width="2" d="M589 554.44v24h-26v-24z"/>
+            </g>
+        </g>
+        <g id="falcon9_v1.0_dragon">
+            <use transform="translate(-37 330)" xlink:href="#falcon9_v1.0-FirstStage"/>
+            <use transform="translate(-21 -257)" xlink:href="#dragon"/>
+        </g>
+        <g id="falcon9_v1.1_sat" transform="translate(-165 330)">
+            <use transform="translate(80 42)" xlink:href="#payload"/>
+            <use transform="translate(144 20)" xlink:href="#SecondStage"/>
+            <use transform="translate(144 20)" xlink:href="#falcon9_v1.1-FirstStage"/>
+        </g>
+        <g id="falcon9_v1.1_dragon" transform="translate(-165 330)">
+            <use transform="translate(144 -669)" xlink:href="#dragon"/>
+            <use transform="translate(144 20)" xlink:href="#SecondStage"/>
+            <use transform="translate(144 20)" xlink:href="#falcon9_v1.1-FirstStage"/>
+        </g>
+        <g id="falcon9_FT_sat" transform="translate(-165 330)">
+            <use transform="translate(80 22)" xlink:href="#payload"/>
+            <use transform="translate(144 14)" xlink:href="#falcon9_FT-SecondStage"/>
+            <use transform="translate(144 20)" xlink:href="#falcon9_FT-FirstStage"/>
+        </g>
+        <g id="falconheavy_FT_sat" transform="translate(-165 330)">
+            <use transform="translate(80 22)" xlink:href="#payload"/>
+            <use transform="translate(144 14)" xlink:href="#falcon9_FT-SecondStage"/>
+            <use transform="translate(144 20)" xlink:href="#falcon9_FT-FirstStage"/>
+            <g transform="translate(65 -303)">
+                <use xlink:href="#falconheavy_booster"/>
+                <path fill="#404040" d="M30 512.36h4v4h-4zM30 236.36h4v4h-4z" transform="translate(76 -16.36)"/>
+            </g>
+            <g transform="translate(125 -303)">
+                <use xlink:href="#falconheavy_booster"/>
+                <path fill="#404040" d="M30 512.36h4v4h-4zM30 236.36h4v4h-4z" transform="translate(46 -16.36)"/>
+            </g>
+            <g transform="translate(-30 0)">
+                <use transform="translate(165 -330)" xlink:href="#legs"/>
+                <use transform="translate(165 -330)" xlink:href="#farings"/>
+            </g>
+            <g transform="translate(30 0)">
+                <use transform="translate(165 -330)" xlink:href="#legs"/>
+                <use transform="translate(165 -330)" xlink:href="#farings"/>
+            </g>
+        </g>
+        <g id="falcon9_FT_dragon" transform="translate(-165 330)">
+            <use transform="translate(144 -689)" xlink:href="#dragon"/>
+            <use transform="translate(144 14)" xlink:href="#falcon9_FT-SecondStage"/>
+            <use transform="translate(144 20)" xlink:href="#falcon9_FT-FirstStage"/>
+        </g>
+        <g id="falcon9_FT_crew-dragon" transform="translate(-165 330)">
+            <use transform="translate(128 50)" xlink:href="#crew-dragon"/>
+            <use transform="translate(144 14)" xlink:href="#falcon9_FT-SecondStage"/>
+            <use transform="translate(144 20)" xlink:href="#falcon9_FT-FirstStage"/>
+        </g>
+    </defs>
 </svg>
