@@ -10,7 +10,6 @@ const Container = styled.div`
   font-size: 1.5em;
 
   > div {
-    margin: 0.1em 0;
     color: #fff;
     font-weight: 400;
     line-height: 1;

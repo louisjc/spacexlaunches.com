@@ -4,29 +4,29 @@ import axios from 'axios'
 import ScrollButton from '../../components/ScrollButton'
 import Header from '../../components/Header'
 import Launch from './Launch'
+import Arrows from './Arrows'
 import { LaunchType } from '../../types'
+
+const MoreInfo = styled.div`
+  text-align: justify;
+  max-width: 580px;
+  margin: 0 auto;
+  height: 60px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.75);
+  @media (max-width: 600px) {
+    display: none;
+  }
+  @media (max-height: 600px) {
+    display: none;
+  }
+`
 
 const Container = styled.div`
   height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  .left,
-  .right {
-    color: #fff;
-    position: fixed;
-    bottom: 5px;
-    @media (max-width: 600px) {
-      display: none;
-    }
-  }
-  .left {
-    left: 5px;
-  }
-  .right {
-    right: 5px;
-  }
 `
 
 const Main = styled.div`
@@ -35,52 +35,39 @@ const Main = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 `
 
-export default class extends React.Component<{}, { data: LaunchType | null }> {
-  state = { data: null }
+export default class extends React.Component<
+  {},
+  { data: LaunchType[] | null; i: number }
+> {
+  state = { data: null as LaunchType[] | null, i: 0 }
+
+  callback = (i: number) => this.setState({ i })
 
   componentDidMount() {
     axios
       .get('https://api.spacexdata.com/v3/launches/upcoming')
-      .then(({ data }) => this.setState({ data: data[0] as LaunchType }))
+      .then(({ data }) => this.setState({ data: data as LaunchType[] }))
   }
 
   render() {
-    const { data } = this.state
+    const { data, i } = this.state
 
     return (
       <Container>
         <Header top />
-        <Main>{data && <Launch data={data} />}</Main>
+        <Main>
+          {data && (
+            <>
+              <Launch data={data[i]} />
+              <Arrows max={data!.length} current={i} callback={this.callback} />
+              <MoreInfo>{data && data[i].details}</MoreInfo>
+            </>
+          )}
+        </Main>
         <ScrollButton to="bottom" />
-        <div className="right">
-          {'Source: '}
-          <a
-            href="https://github.com/r-spacex/SpaceX-API"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            SpaceX-API
-          </a>
-        </div>
-        <div className="left">
-          <a
-            href="https://github.com/louisjc/spacexlaunches.com/issues"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Report issue
-          </a>
-          {' - '}
-          <a
-            href="https://github.com/louisjc/spacexlaunches.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-        </div>
       </Container>
     )
   }

@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import axios from 'axios'
 import ScrollButton from '../../components/ScrollButton'
 import Header from '../../components/Header'
+import Footer from '../../components/Footer'
 import Launch from './Launch'
 import VirtualList from 'react-tiny-virtual-list'
 import { LaunchType } from '../../types'
@@ -18,6 +19,7 @@ const Container = styled.div`
   box-shadow: 0 -2px 20px 0 hsla(211, 74%, 9%, 1);
 
   .flight-container {
+    z-index: 10;
     background: #011e37;
     flex: 1;
     font-size: 14px;
@@ -70,6 +72,7 @@ export default class extends React.Component<{}, { data: LaunchType[] | null }> 
           }}
         </SizeMe>
         <ScrollButton to="top" />
+        <Footer />
       </Container>
     )
   }

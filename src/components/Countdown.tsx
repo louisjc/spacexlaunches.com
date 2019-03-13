@@ -8,12 +8,14 @@ const Container = styled.div`
   line-height: 1;
   margin-top: 20px;
   min-width: 21em;
+  align-self: flex-end;
 
   @media (max-width: 600px) {
     margin-top: 10px;
   }
 
   > div {
+    margin-left: 20px;
     div {
       font-family: 'Roboto Mono', monospace;
       font-size: 3.8em;

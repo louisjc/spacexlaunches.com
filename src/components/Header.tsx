@@ -30,9 +30,7 @@ const Container = styled.header<{ bg: boolean }>`
 const Header: FunctionComponent<{ top?: boolean }> = props => (
   <Container bg={!props.top}>
     <h1>SpaceXLaunches.com</h1>
-    {props.top ? (
-      <span>Fan content - Not an official site</span>
-    ) : (
+    {props.top ? null : (
       <span>
         illustrated by{' '}
         <a href="https://zlsa.github.io/" target="_blank" rel="noopener noreferrer">

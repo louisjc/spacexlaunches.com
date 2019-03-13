@@ -1,6 +1,21 @@
 import React, { FunctionComponent } from 'react'
 import { RocketType } from '../../../types'
 import RocketsSVG from './rockets.svg'
+import styled from 'styled-components/macro'
+
+const Container = styled.div`
+  flex: 1;
+  padding-top: 5px;
+  align-items: flex-end;
+  align-content: stretch;
+  justify-content: center;
+  display: flex;
+  svg {
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+  }
+`
 
 function getPayloadId(rocket: RocketType) {
   switch (rocket.second_stage.payloads[0].payload_type) {
@@ -12,6 +27,7 @@ function getPayloadId(rocket: RocketType) {
     case 'Crew Dragon':
       return 'crew-dragon'
     case 'Satellite':
+    case 'Lander':
       return 'sat'
     default:
       return ''
@@ -30,7 +46,7 @@ function getOptions(rocket: RocketType): string[] {
   if (rocket.first_stage.cores[0].legs) {
     options.push('legs')
   }
-  if (rocket.first_stage.cores[0].block === 5) {
+  if (rocket.first_stage.cores[0].block === 5 && rocket.rocket_id !== 'falconheavy') {
     options.push('block5')
   }
   if (rocket.first_stage.cores[0].gridfins) {
@@ -39,25 +55,27 @@ function getOptions(rocket: RocketType): string[] {
   return options
 }
 
-const Rocket: FunctionComponent<{ rocket: RocketType; success: boolean | null }> = ({
-  rocket,
-  success,
-}) => {
+const Rocket: FunctionComponent<{
+  rocket: RocketType
+  success: boolean | null
+}> = ({ rocket, success }) => {
   const id = getSvgRocketId(rocket)
   const options = getOptions(rocket)
   return (
-    <div
+    <Container
       className="rocket"
       title={id}
       style={success ? {} : { filter: 'grayscale(1) opacity(0.5)' }}
     >
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 535">
-        <use xlinkHref={`${RocketsSVG}#${id}`} />
-        {options.map((option, i) => (
-          <use key={i} xlinkHref={`${RocketsSVG}#${option}`} />
-        ))}
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 535">
+          <use key={`${RocketsSVG}#${id}`} xlinkHref={`${RocketsSVG}#${id}`} />
+          {options.map(option => (
+            <use key={option} xlinkHref={`${RocketsSVG}#${option}`} />
+          ))}
+        </svg>
       </svg>
-    </div>
+    </Container>
   )
 }
 

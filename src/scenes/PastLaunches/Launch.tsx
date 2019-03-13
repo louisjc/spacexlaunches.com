@@ -61,20 +61,6 @@ const Flight = styled.div`
     overflow: hidden;
     min-width: 4.4em;
   }
-
-  .rocket {
-    flex: 1;
-    padding-top: 5px;
-    align-items: flex-end;
-    align-content: stretch;
-    justify-content: center;
-    display: flex;
-    svg {
-      overflow: visible;
-      height: 100%;
-      width: 100%;
-    }
-  }
 `
 
 const Launch: FunctionComponent<{ style: CSSProperties; launch: LaunchType }> = ({
