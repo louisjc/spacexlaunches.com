@@ -8,6 +8,8 @@ import Launch from './Launch'
 import VirtualList from 'react-tiny-virtual-list'
 import { LaunchType } from '../../types'
 import { DIRECTION } from 'react-tiny-virtual-list/types/constants'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 const { SizeMe }: any = require('react-sizeme')
 
 const Container = styled.div`
@@ -18,12 +20,20 @@ const Container = styled.div`
   background: #081e35;
   box-shadow: 0 -2px 20px 0 hsla(211, 74%, 9%, 1);
 
+  .loading,
   .flight-container {
     z-index: 10;
     background: #011e37;
     flex: 1;
-    font-size: 14px;
     display: flex;
+  }
+  .loading {
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+  }
+  .flight-container {
+    font-size: 14px;
     > div {
       overflow-x: scroll !important;
       overflow-y: hidden !important;
@@ -48,29 +58,34 @@ export default class extends React.Component<{}, { data: LaunchType[] | null }> 
   render() {
     const data = this.state.data
     let list = data && data.reverse()
-    if (!list) return null
     return (
       <Container>
         <Header />
-        <SizeMe monitorHeight>
-          {({ size }: { size: { width: number; height: number } }) => {
-            if (size.width == null || size.height == null) return null
-            return (
-              <div className="flight-container">
-                <VirtualList
-                  scrollDirection={'horizontal' as DIRECTION}
-                  width={size.width}
-                  height={size.height}
-                  itemCount={list!.length}
-                  itemSize={80}
-                  renderItem={({ index, style }) => (
-                    <Launch key={index} style={style} launch={list![index]} />
-                  )}
-                />
-              </div>
-            )
-          }}
-        </SizeMe>
+        {list ? (
+          <SizeMe monitorHeight>
+            {({ size }: { size: { width: number; height: number } }) => {
+              if (size.width == null || size.height == null) return null
+              return (
+                <div className="flight-container">
+                  <VirtualList
+                    scrollDirection={'horizontal' as DIRECTION}
+                    width={size.width}
+                    height={size.height}
+                    itemCount={list!.length}
+                    itemSize={80}
+                    renderItem={({ index, style }) => (
+                      <Launch key={index} style={style} launch={list![index]} />
+                    )}
+                  />
+                </div>
+              )
+            }}
+          </SizeMe>
+        ) : (
+          <div className="loading">
+            <FontAwesomeIcon icon={faSpinner} size="lg" spin />
+          </div>
+        )}
         <ScrollButton to="top" />
         <Footer />
       </Container>
