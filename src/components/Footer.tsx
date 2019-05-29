@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components/macro'
 import SocialButtons from './SocialButtons'
 
@@ -22,7 +22,7 @@ const Container = styled.footer`
   }
 `
 
-const Footer: FunctionComponent<{}> = () => (
+const Footer: FC<{}> = () => (
   <Container>
     <div className="left">
       {'Not an official site - '}

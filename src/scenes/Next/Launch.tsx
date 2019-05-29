@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components/macro'
 import Countdown from '../../components/Countdown'
 import Right from './Right'
@@ -56,7 +56,7 @@ const Title = styled.div`
   text-align: right;
 `
 
-const Launch: FunctionComponent<{ data: LaunchType }> = ({ data }) => {
+const Launch: FC<{ data: LaunchType }> = ({ data }) => {
   const l = data.mission_name.length
   const name_fontsize = l > 20 ? (l > 26 ? 2 : 3) : 4
 

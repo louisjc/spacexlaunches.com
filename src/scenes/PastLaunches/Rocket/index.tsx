@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { RocketType } from '../../../types'
 import RocketsSVG from './rockets.svg'
 import styled from 'styled-components/macro'
@@ -55,7 +55,7 @@ function getOptions(rocket: RocketType): string[] {
   return options
 }
 
-const Rocket: FunctionComponent<{
+const Rocket: FC<{
   rocket: RocketType
   success: boolean | null
 }> = ({ rocket, success }) => {

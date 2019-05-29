@@ -1,4 +1,4 @@
-import React, { FunctionComponent, CSSProperties } from 'react'
+import React, { FC, CSSProperties } from 'react'
 import styled from 'styled-components/macro'
 import Destination from './Destination'
 import Rocket from './Rocket'
@@ -63,7 +63,7 @@ const Flight = styled.div`
   }
 `
 
-const Launch: FunctionComponent<{ style: CSSProperties; launch: LaunchType }> = ({
+const Launch: FC<{ style: CSSProperties; launch: LaunchType }> = ({
   style,
   launch,
 }) => (

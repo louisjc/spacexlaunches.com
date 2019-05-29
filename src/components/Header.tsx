@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components/macro'
 
 const Container = styled.header<{ bg: boolean }>`
@@ -27,7 +27,7 @@ const Container = styled.header<{ bg: boolean }>`
   }
 `
 
-const Header: FunctionComponent<{ top?: boolean }> = props => (
+const Header: FC<{ top?: boolean }> = props => (
   <Container bg={!props.top}>
     <h1>SpaceXLaunches.com</h1>
     {props.top ? null : (

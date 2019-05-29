@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components/macro'
 import arrow from './arrow-bottom.svg'
 
@@ -36,7 +36,7 @@ const scroll = (toTop: boolean) => {
     })
 }
 
-const ScrollButton: FunctionComponent<{ to: 'top' | 'bottom' }> = props => {
+const ScrollButton: FC<{ to: 'top' | 'bottom' }> = props => {
   const toTop = props.to === 'top'
   return (
     <Container onClick={scroll(toTop)}>

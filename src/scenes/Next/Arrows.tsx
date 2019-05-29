@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components/macro'
 
 const Container = styled.div`
@@ -26,7 +26,7 @@ const Container = styled.div`
   }
 `
 
-const Arrows: FunctionComponent<{
+const Arrows: FC<{
   max: number
   current: number
   callback: (i: number) => void

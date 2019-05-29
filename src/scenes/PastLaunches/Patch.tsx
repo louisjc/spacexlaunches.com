@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components/macro'
 
 const SIZE = 75
@@ -12,7 +12,7 @@ const Picture = styled.picture`
   }
 `
 
-const Patch: FunctionComponent<{
+const Patch: FC<{
   mission_patch: string | null
   name: string
 }> = props => {

@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { RocketType } from '../../types'
 
-const LandingOutcome: FunctionComponent<{
+const LandingOutcome: FC<{
   success: boolean | null
   land_success: boolean | null
   landing_type: string | null
@@ -27,7 +27,7 @@ const LandingOutcome: FunctionComponent<{
   return null
 }
 
-const Caption: FunctionComponent<{
+const Caption: FC<{
   success: boolean | null
   rocket: RocketType
   name: string

@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import styled from 'styled-components/macro'
 import { LaunchType } from '../../types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -64,7 +64,7 @@ function getTotalMass(data: LaunchType) {
   )
 }
 
-const Right: FunctionComponent<{ data: LaunchType }> = ({ data }) => {
+const Right: FC<{ data: LaunchType }> = ({ data }) => {
   const mass = getTotalMass(data)
   return (
     <Container>

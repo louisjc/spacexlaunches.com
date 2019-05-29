@@ -1,7 +1,7 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import DestinationSVG from './destinations.svg'
 
-const Destination: FunctionComponent<{ orbit: string }> = ({ orbit }) => (
+const Destination: FC<{ orbit: string }> = ({ orbit }) => (
   <span className={`destination ${orbit}`} title={orbit}>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="30 300 139 67">
       <use xlinkHref={`${DestinationSVG}#${orbit}`} />

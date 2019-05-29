@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react'
+import React, { FC } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebookF } from '@fortawesome/free-brands-svg-icons'
 import styled from 'styled-components/macro'
@@ -23,7 +23,7 @@ const Container = styled.div<{ colors: boolean }>`
   }
 `
 
-const SocialButtons: FunctionComponent<{
+const SocialButtons: FC<{
   link: string
   text: string
   twitterUser?: string
